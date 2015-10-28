@@ -5,9 +5,11 @@ Class Search_model extends CI_Model
 	function get_search($match)
 	{
 		$this->db->select('*');
-		$this->db->from('tbl_dokumen');
-		$this->db->join('tbl_pekerjaan', 'tbl_dokumen.kd_pekerjaan = tbl_pekerjaan.kd_pekerjaan');
-		$this->db->like('no_dok', $match);
+		$this->db->from('tbl_pekerjaan');
+		$this->db->join('tbl_dokumen', 'tbl_pekerjaan.kd_pekerjaan = tbl_dokumen.kd_pekerjaan');
+		$this->db->join('tbl_lokasi', 'tbl_dokumen.no_dok = tbl_lokasi.no_dok');
+		$this->db->join('tbl_index', 'tbl_pekerjaan.index_arsip = tbl_index.index_arsip');
+		$this->db->like('tbl_dokumen.no_dok', $match);
 		$this->db->or_like('nm_dok', $match);
 		$this->db->or_like('asal', $match);
 		$this->db->or_like('penerima', $match);
@@ -18,6 +20,7 @@ Class Search_model extends CI_Model
 		$this->db->or_like('tbl_dokumen.keterangan', $match);
 		$this->db->or_like('tbl_pekerjaan.kd_pekerjaan', $match);
 		$this->db->or_like('nm_pekerjaan', $match);
+		$this->db->or_like('tbl_index.index_arsip', $match);
 		$query = $this->db->get();
 		return $query;
 	}
