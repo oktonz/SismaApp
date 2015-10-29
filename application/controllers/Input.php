@@ -168,6 +168,7 @@ class Input extends CI_Controller {
 			'kolom' => $this->input->post('txtkolom'),
 			'file_path' => substr($res['full_path'], 25),
 			'no_dok' => $this->input->post('txtnodok'),
+			'kd_map' => $this->input->post('cbolok'),
 		);
 		$this->input_model->add_lokasi($lokasidok);
 

@@ -44,6 +44,24 @@ class Arsip extends CI_Controller {
 		}
 	}
 
+	public function delete_arsip($kd_pekerjaan)
+	{
+		if($this->session->userdata('logged_in'))
+		{
+			$dok = $this->arsip_model->get_dokumen($kd_pekerjaan)->row();
+			$kdmap = $dok->kd_map;
+			$session_data = $this->session->userdata('logged_in');
+			
+			$this->delete_model->delete_arsip($kd_pekerjaan, $kdmap);
+
+			redirect('arsip');
+		}
+		else
+		{
+			redirect('login');
+		}
+	}
+
 	public function html_topbar()
 	{
 		$session_data = $this->session->userdata('logged_in');

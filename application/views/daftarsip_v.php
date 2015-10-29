@@ -136,7 +136,7 @@
                                             <a class="btn btn-info" href="#">
                                                 <i class="glyphicon glyphicon-edit icon-white"></i>
                                             </a>
-                                            <a class="btn btn-danger" href="#">
+                                            <a class="btn btn-danger" href="<?php echo base_url().'arsip/delete_arsip/'.$arsips['kd_pekerjaan'];?>">
                                                 <i class="glyphicon glyphicon-trash icon-white"></i>                                    
                                             </a>
                                         </td>
