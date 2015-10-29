@@ -51,6 +51,7 @@ Class arsip_model extends CI_Model
 		$this->db->select('*');
 		$this->db->from('tbl_lokasi');
 		$this->db->join('tbl_dokumen', 'tbl_lokasi.no_dok = tbl_dokumen.no_dok');
+		$this->db->join('tbl_maps', 'tbl_dokumen.kd_map = tbl_maps.kd_map');
 		$this->db->order_by('tbl_lokasi.kd_lokasi');
 		$data = $this->db->get();
 		return $data;
@@ -61,6 +62,7 @@ Class arsip_model extends CI_Model
 		$this->db->select('*');
 		$this->db->from('tbl_lokasi');
 		$this->db->join('tbl_dokumen', 'tbl_lokasi.no_dok = tbl_dokumen.no_dok');
+		$this->db->join('tbl_maps', 'tbl_dokumen.kd_map = tbl_maps.kd_map');
 		$this->db->where('kd_lokasi', $kd_lokasi);
 		$this->db->order_by('tbl_lokasi.kd_lokasi');
 		$data = $this->db->get();

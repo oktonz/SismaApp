@@ -104,6 +104,7 @@
                                 <thead>
                                 <tr>
                                     <th>Nomor</th>
+                                    <th>Lokasi</th>
                                     <th>Gedung</th>
                                     <th>Lantai</th>
                                     <th>Rak</th>
@@ -119,6 +120,7 @@
                                     <?php foreach ($lokasi as $loks) { ?>
                                     <tr>
                                         <td class="center"><?php echo $loks['kd_lokasi'];?></td>
+                                        <td class="center"><?php echo $loks['lokasi'];?></td>
                                         <td class="center"><?php echo $loks['gedung'];?></td>
                                         <td class="center"><?php echo $loks['lantai'];?></td>
                                         <td class="center"><?php echo $loks['rak'];?></td>
@@ -127,7 +129,7 @@
                                         <td class="center"><?php echo $loks['no_dok'];?></td>
                                         <td class="center"><?php echo $loks['nm_dok'];?></td>
                                         <td class="center">
-                                            <a href="<?php echo base_url().$loks['file_path'];?>" target="_blank">File Dok</a>
+                                            <a href="<?php echo base_url().$loks['file_path'];?>" target="_blank">File</a>
                                         </td>
                                         <td class="center">
                                             <a class="btn btn-success" href="<?php echo base_url().'lokasi/det_lokasi/'.$loks['kd_lokasi'];?>">

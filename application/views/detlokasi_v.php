@@ -110,6 +110,10 @@
                                     <td><?php echo $detl['kd_lokasi'];?></td>
                                 </tr>   
                                 <tr>
+                                    <td>Lokasi</td>
+                                    <td><?php echo $detl['lokasi'];?></td>
+                                </tr>   
+                                <tr>
                                     <td>Gedung</td>
                                     <td><?php echo $detl['gedung'];?></td>
                                 </tr>
