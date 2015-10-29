@@ -142,12 +142,6 @@
                                             <a class="btn btn-success" href="<?php echo base_url().'lokasi/det_lokasi/'.$has['kd_lokasi'];?>">
                                                 <i class="glyphicon glyphicon-zoom-in icon-white"></i>
                                             </a>
-                                            <a class="btn btn-info" href="#">
-                                                <i class="glyphicon glyphicon-edit icon-white"></i>
-                                            </a>
-                                            <a class="btn btn-danger" href="#">
-                                                <i class="glyphicon glyphicon-trash icon-white"></i>
-                                            </a>
                                         </td>
                                     </tr>
                                     <?php } ?>
