@@ -118,7 +118,7 @@
                                     <th>Kondisi</th>
                                     <th>Keterangan</th>
                                     <th>Data File</th>
-                                    <th width="15%">Action</th>
+                                    <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
