@@ -89,7 +89,7 @@ $(document).ready(function() {
 
 		//add click listner to dokumen button
 		google.maps.event.addDomListener(dokBtn, "click", function(event) {
-			alert("Dokumen "+MapTitle);
+			window.location='maps/maps_search/'+MapTitle;
 		});
 		//add click listner to remove marker button
 		/*google.maps.event.addDomListener(removeBtn, "click", function(event) {

@@ -29,5 +29,17 @@ Class Search_model extends CI_Model
 	{
 		
 	}
+
+	function get_dok_maps($lokasi)
+	{
+		$this->db->select('*');
+		$this->db->from('tbl_dokumen');
+		$this->db->join('tbl_maps', 'tbl_dokumen.kd_map = tbl_maps.kd_map');
+		$this->db->join('tbl_lokasi', 'tbl_dokumen.no_dok = tbl_lokasi.no_dok');
+		$this->db->where('lokasi', $lokasi);
+		$this->db->order_by('tbl_dokumen.no_dok');
+		$query = $this->db->get();
+		return $query;
+	}
 }
 ?>

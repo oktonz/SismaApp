@@ -10,6 +10,14 @@ foreach ($hasil as $has) {
 	echo "</pre>";
 }
 */
+/*
+foreach ($hasil as $has) {
+	echo "<pre>";
+	echo $has['no_dok'];
+	echo "</pre>";
+}
+*/
+
 
 echo "<h1>INI HALAMAN TESTING DATABASE</h1>";
 ?>

@@ -20,6 +20,27 @@ class Maps extends CI_Controller {
 		}
 	}
 
+	public function maps_search($lokasi)
+	{
+		if($this->session->userdata('logged_in'))
+		{
+			$lokasi = urldecode($lokasi);
+			$session_data = $this->session->userdata('logged_in');
+			$result = $this->search_model->get_dok_maps($lokasi);
+			$komponen = array(
+				'topbar' => $this->html_topbar(),
+				'navigasi' => $this->html_navigasi(),
+				'footer' => $this->html_footer(),
+				'hasil' => $result->result_array(),
+				);
+			$this->load->view('lokarsipmap_v', $komponen);
+		}
+		else
+		{
+			redirect('login');
+		}
+	}
+
 	public function html_topbar()
 	{
 		$session_data = $this->session->userdata('logged_in');
