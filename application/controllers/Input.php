@@ -135,7 +135,7 @@ class Input extends CI_Controller {
 			'max_size' => "2048000", // Can be set to particular file size , here it is 2 MB(2048 Kb)
 			//'max_height' => "1500",
 			//'max_width' => "1500",
-			'file_name' => $nmdok, 
+			'file_name' => $nmdok.date('d').date('i'), 
 		);
 		$this->load->library('upload', $config);
 		if($this->upload->do_upload())
