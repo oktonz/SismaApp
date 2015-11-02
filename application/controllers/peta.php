@@ -32,9 +32,19 @@ class Peta extends CI_Controller {
 
 	public function html_navigasi()
 	{
-		$data = array(//data
-			);
-		return $this->load->view('navigasi_v', $data, true);
+		$session_data = $this->session->userdata('logged_in');
+		$data = array(
+			'id' => $session_data['id'],
+			'username' => $session_data['username'],
+			'role' => $session_data['role']
+		);
+		if ($session_data['role'] != 'Master') {
+			return $this->load->view('navigasi_v1', $data, true);
+		}
+		else
+		{
+			return $this->load->view('navigasi_v', $data, true);	
+		}
 	}
 
 	public function html_footer()
