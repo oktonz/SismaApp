@@ -42,6 +42,24 @@ class Lokasi extends CI_Controller {
 		}
 	}
 
+	public function delete_lokasi($kd_lokasi)
+	{
+		if($this->session->userdata('logged_in'))
+		{
+			$dok = $this->arsip_model->get_det_lokasi($kd_lokasi)->row();
+			$no_dok = $dok->no_dok;
+			$session_data = $this->session->userdata('logged_in');
+			
+			$this->delete_model->delete_lokasi($kd_lokasi, $no_dok);
+
+			redirect('lokasi');
+		}
+		else
+		{
+			redirect('login');
+		}
+	}
+
 	public function html_topbar()
 	{
 		$session_data = $this->session->userdata('logged_in');

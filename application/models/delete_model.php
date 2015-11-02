@@ -13,5 +13,14 @@ Class Delete_model extends CI_model
 		$this->db->where('kd_map', $kd_map);
 		$this->db->delete('tbl_lokasi');
 	}
+
+	public function delete_lokasi($kd_lok, $no_dok)
+	{
+		$this->db->where('kd_lokasi', $kd_lok);
+		$this->db->delete('tbl_lokasi');
+
+		$this->db->where('no_dok', $no_dok);
+		$this->db->delete('tbl_dokumen');
+	}
 }
 ?>
