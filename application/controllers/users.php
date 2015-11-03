@@ -22,6 +22,26 @@ class Users extends CI_Controller {
 		}
 	}
 
+	public function detuser($id)
+	{
+		if($this->session->userdata('logged_in'))
+		{	
+			$result = $this->users_model->get_users($id);
+			$session_data = $this->session->userdata('logged_in');
+			$komponen = array(
+				'topbar' => $this->html_topbar(),
+				'navigasi' => $this->html_navigasi(),
+				'footer' => $this->html_footer(),
+				'users' => $result->result_array()
+				);
+			$this->load->view('detusers_v', $komponen);
+		}
+		else
+		{
+			redirect('login');
+		}
+	}
+
 	function logout()
 	{
 	   $this->session->unset_userdata('logged_in');

@@ -16,7 +16,7 @@
         ===
     -->
     <meta charset="utf-8">
-    <title>Daftar Users - Sistem Manajemen Arsip</title>
+    <title>Detail User - Sistem Manajemen Arsip</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
     <meta name="author" content="Muhammad Usman">
@@ -78,13 +78,16 @@
             <div>
                 <ul class="breadcrumb">
                     <li>
-                        <a href="#">Home</a>
+                        <a href="#">SisMA</a>
                     </li>
                     <li>
                         <a href="#">Pengaturan</a>
                     </li>
                     <li>
                         <a href="#">Daftar Users</a>
+                    </li>
+                    <li>
+                        <a href="#">Detail User</a>
                     </li>
                 </ul>
             </div>
@@ -93,74 +96,77 @@
                 <div class="box col-md-12">
                     <div class="box-inner">
                         <div class="box-header well" data-original-title="">
-                            <h2><i class="glyphicon glyphicon-star-empty"></i> Daftar Users</h2>
+                            <h2><i class="glyphicon glyphicon-star-empty"></i> Detail User</h2>
 
                             <div class="box-icon">
                                 <a href="#" class="btn btn-minimize btn-round btn-default"><i
-                                        class="glyphicon glyphicon-chevron-up"></i></a>
+                                class="glyphicon glyphicon-chevron-up"></i></a>
                                 <a href="#" class="btn btn-close btn-round btn-default"><i
-                                        class="glyphicon glyphicon-remove"></i></a>
+                                class="glyphicon glyphicon-remove"></i></a>
                             </div>
                         </div>
                         <div class="box-content">
-                            <table class="table table-striped table-bordered responsive">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Nama Lengkap</th>
-                                        <th>Alamat</th>
-                                        <th>Nomor Telp</th>
-                                        <th>Tempat Lahir</th>
-                                        <th>Tanggal Lahir</th>
-                                        <th>Username</th>
-                                        <th>Role</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                <?php foreach ($dafusers as $us) { ?>
-                                <tr>
-                                    <td class="center"><?php echo $us['id']; ?></td>
-                                    <td class="center"><?php echo $us['nama']; ?></td>
-                                    <td class="center"><?php echo $us['alamat']; ?></td>
-                                    <td class="center"><?php echo $us['nohp']; ?></td>
-                                    <td class="center"><?php echo $us['tpt_lahir']; ?></td>
-                                    <td class="center"><?php echo $us['tgl_lahir']; ?></td>
-                                    <td class="center"><?php echo $us['username']; ?></td>
-                                    <td class="center"><?php echo $us['role']; ?></td>
-                                   
-                                    <td class="center">
-                                        <a class="btn btn-success" href="<?php echo base_url().'users/detuser/'.$us['id'];?>">
-                                            <i class="glyphicon glyphicon-zoom-in icon-white"></i>
-                                            
-                                        </a>
-                                        <a class="btn btn-info" href="#">
-                                            <i class="glyphicon glyphicon-edit icon-white"></i>
-                                            
-                                        </a>
-                                        <a class="btn btn-danger" href="#">
-                                            <i class="glyphicon glyphicon-trash icon-white"></i>
-                                            
-                                        </a>
-                                    </td>
-                                </tr>
+                            <form class="form-horizontal" role="form">
+                                <?php foreach ($users as $user) { ?>
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="Nama">Nama Lengkap : </label>
+                                  <div class="col-sm-8">
+                                    <label class="control-label" for="datanama"><?php echo $user['nama'];?></label>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="alamat">Alamat : </label>
+                                  <div class="col-sm-8">          
+                                    <label class="control-label" for="dataalamat"><?php echo $user['alamat'];?></label>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="nohp">Nomor HP : </label>
+                                  <div class="col-sm-8">          
+                                    <label class="control-label" for="data nohp"><?php echo $user['nohp'];?></label>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="tempatlahir">Tempat Lahir : </label>
+                                  <div class="col-sm-8">          
+                                    <label class="control-label" for="datatpt"><?php echo $user['tpt_lahir'];?></label>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="tanggal">Tanggal Lahir : </label>
+                                  <div class="col-sm-8">          
+                                    <label class="control-label" for="datatgl"><?php echo $user['tgl_lahir'];?></label>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="username">Username : </label>
+                                  <div class="col-sm-8">          
+                                    <label class="control-label" for="datausername"><?php echo $user['username'];?></label>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="role">Role : </label>
+                                  <div class="col-sm-8">          
+                                    <label class="control-label" for="datarole"><?php echo $user['role'];?></label>
+                                  </div>
+                                </div>
+                                <div class="form-group">        
+                                  <div class="col-sm-offset-2 col-sm-10">
+                                    <a href="<?php echo base_url().'users';?>" class="btn btn-primary">Back</a>
+                                  </div>
+                                </div>
                                 <?php } ?>
-                                </tbody>
-                            </table>
-                            <a class="btn btn-success" href="#">
-                                Tambah      
-                            </a>
+                            </form>
                         </div>
                     </div>
                 </div>
-            </div><!--/row-->
+            </div>
             <!-- content ends -->
         </div><!--/#content.col-md-0-->
     </div><!--/fluid-row-->
 
     <hr>
 
-    <!-- MODAL -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
          aria-hidden="true">
 
@@ -180,16 +186,10 @@
             </div>
         </div>
     </div>
-    <!-- END MODAL -->
 
-    <footer class="row">
-        <p class="col-md-9 col-sm-9 col-xs-12 copyright">&copy; <a href="http://usman.it" target="_blank">Muhammad
-                Usman</a> 2012 - 2015 || redesign @jakarta 2015</p>
-
-        <p class="col-md-3 col-sm-3 col-xs-12 powered-by">Powered by: <a
-                href="http://usman.it/free-responsive-admin-template">Charisma</a></p>
-    </footer>
-
+    <!--Footer-->
+        <?php echo $footer;?>
+    <!--end Footer-->
 </div><!--/.fluid-container-->
 
 <!-- external javascript -->
@@ -230,7 +230,6 @@
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js"></script>
 <!-- JavaScript Maps-->
 <script type="text/javascript" src="<?php echo base_url().'assets/js/';?>maps-app.js"></script>
-
 
 </body>
 </html>
