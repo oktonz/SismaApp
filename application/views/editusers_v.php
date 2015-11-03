@@ -16,7 +16,7 @@
         ===
     -->
     <meta charset="utf-8">
-    <title>Daftar Users - Sistem Manajemen Arsip</title>
+    <title>Edit Users - Sistem Manajemen Arsip</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
     <meta name="author" content="Muhammad Usman">
@@ -39,7 +39,7 @@
     <link href='<?php echo base_url().'assets/css/';?>uploadify.css' rel='stylesheet'>
     <link href='<?php echo base_url().'assets/css/';?>animate.min.css' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/css/';?>maps-app.css">
-
+    
     <!-- jQuery -->
     <script src="<?php echo base_url()?>assets/bower_components/jquery/jquery.min.js"></script>
 
@@ -78,13 +78,16 @@
             <div>
                 <ul class="breadcrumb">
                     <li>
-                        <a href="#">Home</a>
+                        <a href="#">SisMA</a>
                     </li>
                     <li>
                         <a href="#">Pengaturan</a>
                     </li>
                     <li>
                         <a href="#">Daftar Users</a>
+                    </li>
+                    <li>
+                        <a href="#">Edit Users</a>
                     </li>
                 </ul>
             </div>
@@ -93,7 +96,7 @@
                 <div class="box col-md-12">
                     <div class="box-inner">
                         <div class="box-header well" data-original-title="">
-                            <h2><i class="glyphicon glyphicon-star-empty"></i> Daftar Users</h2>
+                            <h2><i class="glyphicon glyphicon-star-empty"></i> Form Edit Users</h2>
 
                             <div class="box-icon">
                                 <a href="#" class="btn btn-minimize btn-round btn-default"><i
@@ -103,53 +106,88 @@
                             </div>
                         </div>
                         <div class="box-content">
-                            <table class="table table-striped table-bordered responsive">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Nama Lengkap</th>
-                                        <th>Alamat</th>
-                                        <th>Nomor Telp</th>
-                                        <th>Tempat Lahir</th>
-                                        <th>Tanggal Lahir</th>
-                                        <th>Username</th>
-                                        <th>Role</th>
-                                        <th width="15%">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                <?php foreach ($dafusers as $us) { ?>
-                                <tr>
-                                    <td class="center"><?php echo $us['id']; ?></td>
-                                    <td class="center"><?php echo $us['nama']; ?></td>
-                                    <td class="center"><?php echo $us['alamat']; ?></td>
-                                    <td class="center"><?php echo $us['nohp']; ?></td>
-                                    <td class="center"><?php echo $us['tpt_lahir']; ?></td>
-                                    <td class="center"><?php echo $us['tgl_lahir']; ?></td>
-                                    <td class="center"><?php echo $us['username']; ?></td>
-                                    <td class="center"><?php echo $us['role']; ?></td>
-                                   
-                                    <td class="center">
-                                        <a class="btn btn-success" href="<?php echo base_url().'users/detuser/'.$us['id'];?>">
-                                            <i class="glyphicon glyphicon-zoom-in icon-white"></i>
-                                            
-                                        </a>
-                                        <a class="btn btn-info" href="<?php echo base_url().'users/edit_user/'.$us['id'];?>">
-                                            <i class="glyphicon glyphicon-edit icon-white"></i>
-                                            
-                                        </a>
-                                        <a class="btn btn-danger" href="<?php echo base_url().'users/del_user/'.$us['id'];?>">
-                                            <i class="glyphicon glyphicon-trash icon-white"></i>
-                                            
-                                        </a>
-                                    </td>
-                                </tr>
-                                <?php } ?>
-                                </tbody>
-                            </table>
-                            <a class="btn btn-success" href="<?php echo base_url().'users/add_users';?>">
-                                Tambah      
-                            </a>
+                            <?php foreach ($user as $u) { ?>                            
+                            <form class="form-horizontal" role="form" method="post" action="<?php echo base_url().'users/do_edit_users';?>">
+                                <input type="hidden" name="hid" value="<?php echo $u['id'];?>">
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="indexarsip">Nama Lengkap:</label>
+                                  <div class="col-sm-4">
+                                    <input type="text" class="form-control" name="txtnama" value="<?php echo $u['nama'];?>">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="provinsi">UserName:</label>
+                                  <div class="col-sm-4">          
+                                    <input type="text" class="form-control" name="txtusername" value="<?php echo $u['username'];?>">
+                                  </div>
+                                </div>
+                                <!--
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="kabupaten">Password:</label>
+                                  <div class="col-sm-4">          
+                                    <input type="password" class="form-control" name="txtpassword" value="<?php echo $u['password'];?>">
+                                  </div>
+                                </div>
+                                -->
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="kodepkrj">Alamat:</label>
+                                  <div class="col-sm-4">          
+                                    <textarea class="form-control" rows="4" name="txtalamat"><?php echo $u['alamat'];?></textarea>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="namapkrj">No Telp/HP:</label>
+                                  <div class="col-sm-4">          
+                                    <input type="text" class="form-control" name="txtnohp" value="<?php echo $u['nohp'];?>">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="tahun">Tempat Lahir:</label>
+                                  <div class="col-sm-3">          
+                                    <input type="text" class="form-control" name="txttempatlahir" value="<?php echo $u['tpt_lahir'];?>">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="tahun">Tanggal Lahir:</label>
+                                  <div class="col-sm-3">          
+                                    <input type="date" class="form-control" name="dtptgllahir" value="<?php echo $u['tgl_lahir'];?>">
+                                  </div>
+                                </div>                                
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="kecamatan">Role:</label>
+                                  <div class="col-sm-2">
+                                      <select class="form-control" id="sel" onchange="run()">
+                                        <option>Pilih Role</option>
+                                        <?php if ($u['role'] == "Super Admin")
+                                        { ?>
+                                            <option selected="selected">Super Admin</option>
+                                            <option>Admin</option>
+                                            <option>Viewer</option>  
+                                        <?php } 
+                                        elseif ($u['role'] == "Admin") 
+                                        { ?>
+                                            <option>Super Admin</option>
+                                            <option selected="selected">Admin</option>
+                                            <option>Viewer</option>  
+                                        <?php }
+                                        elseif ($u['role'] == "Viewer")
+                                        { ?>
+                                            <option>Super Admin</option>
+                                            <option>Admin</option>
+                                            <option selected="selected">Viewer</option>  
+                                        <?php }
+                                        ?>                                   
+                                      </select>
+                                      <input type="hidden" name="cborole" id="hrole">
+                                  </div>
+                                </div>                                                                                                                    
+                                <div class="form-group">        
+                                  <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-primary" name="cmdsimpan">Simpan</button>
+                                  </div>
+                                </div>
+                          </form>
+                          <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -160,28 +198,6 @@
 
     <hr>
 
-    <!-- MODAL -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-         aria-hidden="true">
-
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                    <h3>Settings</h3>
-                </div>
-                <div class="modal-body">
-                    <p>Here settings can be configured...</p>
-                </div>
-                <div class="modal-footer">
-                    <a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
-                    <a href="#" class="btn btn-primary" data-dismiss="modal">Save changes</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- END MODAL -->
-
     <footer class="row">
         <p class="col-md-9 col-sm-9 col-xs-12 copyright">&copy; <a href="http://usman.it" target="_blank">Muhammad
                 Usman</a> 2012 - 2015 || redesign @jakarta 2015</p>
@@ -191,6 +207,13 @@
     </footer>
 
 </div><!--/.fluid-container-->
+
+<script>
+  function run()
+  {
+    document.getElementById("hrole").value = document.getElementById("sel").value;
+  }
+</script>
 
 <!-- external javascript -->
 
@@ -230,7 +253,6 @@
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js"></script>
 <!-- JavaScript Maps-->
 <script type="text/javascript" src="<?php echo base_url().'assets/js/';?>maps-app.js"></script>
-
 
 </body>
 </html>

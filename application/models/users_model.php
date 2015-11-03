@@ -19,5 +19,11 @@ Class Users_model extends CI_Model
 	{
 		$this->db->insert('tbl_user', $data);
 	}
+
+	function edit_users($id, $data)
+	{
+		$this->db->where('id', $id);
+		$this->db->update('tbl_user', $data);
+	}
 }
 ?>

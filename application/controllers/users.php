@@ -63,6 +63,50 @@ class Users extends CI_Controller {
 		}
 	}
 
+	public function edit_user($id)
+	{
+		if($this->session->userdata('logged_in'))
+		{	
+			$result = $this->users_model->get_users($id);
+			$session_data = $this->session->userdata('logged_in');
+			$komponen = array(
+				'topbar' => $this->html_topbar(),
+				'navigasi' => $this->html_navigasi(),
+				'footer' => $this->html_footer(),
+				'user' => $result->result_array()
+				);
+			$this->load->view('editusers_v', $komponen);
+		}
+		else
+		{
+			redirect('login');
+		}
+	}
+
+	public function do_edit_users()
+	{
+		if($this->session->userdata('logged_in'))
+		{
+			$id = $this->input->post('hid');
+			$dat = array(
+			'nama' => $this->input->post('txtnama'),
+			'alamat' => $this->input->post('txtalamat'),
+			'nohp' => $this->input->post('txtnohp'),
+			'tpt_lahir' => $this->input->post('txttempatlahir'),
+			'tgl_lahir' => $this->input->post('dtptgllahir'),
+			'username' => $this->input->post('txtusername'),
+			//'password' => md5($this->input->post('txtpassword')),
+			'role' => $this->input->post('cborole'),
+			);
+			$this->users_model->edit_users($id, $dat);
+			redirect('users');
+		}
+		else
+		{
+			redirect('login');
+		}
+	}
+
 	public function detuser($id)
 	{
 		if($this->session->userdata('logged_in'))
