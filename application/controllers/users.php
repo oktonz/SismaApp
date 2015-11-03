@@ -46,15 +46,22 @@ class Users extends CI_Controller {
 	{
 		if($this->session->userdata('logged_in'))
 		{
-			$this->delete_model->delete_user($id);
+			$result = $this->users_model->get_users($id)->row();
+			if(($result->username) != "Admin")
+			{
+				$this->delete_model->delete_user($id);
 
-			redirect('users');
+				redirect('users');
+			}
+			else
+			{
+				redirect('users');
+			}
 		}
 		else
 		{
 			redirect('login');
 		}
-		
 	}
 
 	function logout()
