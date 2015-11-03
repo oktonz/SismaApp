@@ -22,6 +22,47 @@ class Users extends CI_Controller {
 		}
 	}
 
+	public function add_users()
+	{
+		if($this->session->userdata('logged_in'))
+		{
+			$session_data = $this->session->userdata('logged_in');
+			$komponen = array(
+				'topbar' => $this->html_topbar(),
+				'navigasi' => $this->html_navigasi(),
+				'footer' => $this->html_footer(),
+				);
+			$this->load->view('addusers_v', $komponen);
+		}
+		else
+		{
+			redirect('login');
+		}
+	}
+
+	public function do_add_users()
+	{
+		if($this->session->userdata('logged_in'))
+		{
+			$dat = array(
+			'nama' => $this->input->post('txtnama'),
+			'alamat' => $this->input->post('txtalamat'),
+			'nohp' => $this->input->post('txtnohp'),
+			'tpt_lahir' => $this->input->post('txttempatlahir'),
+			'tgl_lahir' => $this->input->post('dtptgllahir'),
+			'username' => $this->input->post('txtusername'),
+			'password' => md5($this->input->post('txtpassword')),
+			'role' => $this->input->post('cborole'),
+			);
+			$this->users_model->insert_users($dat);
+			redirect('users');
+		}
+		else
+		{
+			redirect('login');
+		}
+	}
+
 	public function detuser($id)
 	{
 		if($this->session->userdata('logged_in'))

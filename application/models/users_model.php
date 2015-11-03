@@ -14,5 +14,10 @@ Class Users_model extends CI_Model
 		$data = $this->db->get('tbl_user');
 		return $data;
 	}
+
+	function insert_users($data)
+	{
+		$this->db->insert('tbl_user', $data);
+	}
 }
 ?>
