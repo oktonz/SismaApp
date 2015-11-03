@@ -22,5 +22,11 @@ Class Delete_model extends CI_model
 		$this->db->where('no_dok', $no_dok);
 		$this->db->delete('tbl_dokumen');
 	}
+
+	public function delete_user($id)
+	{	
+		$this->db->where('id', $id);
+		$this->db->delete('tbl_user');
+	}
 }
 ?>
