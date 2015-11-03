@@ -176,7 +176,7 @@ class Input extends CI_Controller {
 			'rak' => $this->input->post('txtrak'),
 			'baris' => $this->input->post('txtbaris'),
 			'kolom' => $this->input->post('txtkolom'),
-			'file_path' => substr($res['full_path'], 25),
+			'file_path' => "assets/dokumen/".$res['file_name'],
 			'no_dok' => $this->input->post('txtnodok'),
 			'kd_map' => $this->input->post('cbolok'),
 		);
