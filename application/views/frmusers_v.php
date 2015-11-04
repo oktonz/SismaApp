@@ -138,7 +138,8 @@
                                             <i class="glyphicon glyphicon-edit icon-white"></i>
                                             
                                         </a>
-                                        <a class="btn btn-danger" href="<?php echo base_url().'users/del_user/'.$us['id'];?>">
+                                        <a class="btn btn-danger" href="<?php echo base_url().'users/del_user/'.$us['id'];?>"
+                                            onclick="return confirm('Yakin Akan dihapus ?');">
                                             <i class="glyphicon glyphicon-trash icon-white"></i>
                                             
                                         </a>

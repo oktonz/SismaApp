@@ -100,7 +100,7 @@
                             </div>
                         </div>
                         <div class="box-content">
-                            <table class="table table-striped table-bordered responsive">
+                            <table class="table table-striped table-bordered bootstrap-datatable datatable responsive">
                                 <thead>
                                 <tr>
                                     <th>Nomor</th>
@@ -138,7 +138,8 @@
                                             <a class="btn btn-info" href="#">
                                                 <i class="glyphicon glyphicon-edit icon-white"></i>
                                             </a>
-                                            <a class="btn btn-danger" href="<?php echo base_url().'lokasi/delete_lokasi/'.$loks['kd_lokasi'];?>">
+                                            <a class="btn btn-danger" href="<?php echo base_url().'lokasi/delete_lokasi/'.$loks['kd_lokasi'];?>"
+                                                onclick="return confirm('Yakin Akan dihapus ?');">
                                                 <i class="glyphicon glyphicon-trash icon-white"></i>
                                             </a>
                                         </td>
