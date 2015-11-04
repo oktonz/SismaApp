@@ -226,6 +226,11 @@ ul.dashboard-list li a span {
     zoom: 1;
 }
 
+#tengah {
+    vertical-align: middle;
+    text-align: center;
+}
+
 .dashboard-avatar {
     height: 50px;
     width: 50px;

@@ -85,8 +85,7 @@
                     </li>
                 </ul>
             </div>
-
-            <div class="row">
+            <!--<div class="row">
                 <div class="box col-md-12">
                     <div class="box-inner">
                         <div class="box-header well" data-original-title="">
@@ -120,16 +119,16 @@
                                     <?php foreach ($arsip as $arsips) { ?>
                                     <tr>
                                         <td><?php echo $arsips['index_arsip'];?></td>
-                                        <td class="center"><?php echo $arsips['judul'];?></td>
-                                        <td class="center"><?php echo $arsips['nm_pekerjaan'];?></td>
-                                        <td class="center"><?php echo $arsips['unit'];?></td>
-                                        <td class="center"><?php echo $arsips['tahun'];?></td>
-                                        <td class="center"><?php echo $arsips['provinsi'];?></td>
-                                        <td class="center"><?php echo $arsips['kabupaten'];?></td>
-                                        <td class="center"><?php echo $arsips['kecamatan'];?></td>
-                                        <td class="center"><?php echo $arsips['desa'];?></td>
-                                        <td class="center"><?php echo $arsips['status'];?></td>
-                                        <td class="center" width="15%">
+                                        <td id="tengah"><?php echo $arsips['judul'];?></td>
+                                        <td id="tengah"><?php echo $arsips['nm_pekerjaan'];?></td>
+                                        <td id="tengah"><?php echo $arsips['unit'];?></td>
+                                        <td id="tengah"><?php echo $arsips['tahun'];?></td>
+                                        <td id="tengah"><?php echo $arsips['provinsi'];?></td>
+                                        <td id="tengah"><?php echo $arsips['kabupaten'];?></td>
+                                        <td id="tengah"><?php echo $arsips['kecamatan'];?></td>
+                                        <td id="tengah"><?php echo $arsips['desa'];?></td>
+                                        <td id="tengah"><?php echo $arsips['status'];?></td>
+                                        <td id="tengah" width="15%">
                                             <a class="btn btn-success" href="<?php echo base_url().'arsip/detail_arsip/'.$arsips['kd_pekerjaan'];?>">
                                                 <i class="glyphicon glyphicon-zoom-in icon-white"></i>                                    
                                             </a>
@@ -147,7 +146,68 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
+
+            <div class="row">
+                <div class="box col-md-12">
+                    <div class="box-inner">
+                        <div class="box-header well" data-original-title="">
+                            <h2><i class="glyphicon glyphicon-user"></i> Daftar Arsip</h2>
+                                <div class="box-icon">
+                                    <a href="#" class="btn btn-minimize btn-round btn-default"><i class="glyphicon glyphicon-chevron-up"></i></a>
+                                    <a href="#" class="btn btn-close btn-round btn-default"><i class="glyphicon glyphicon-remove"></i></a>
+                                </div>
+                        </div>
+                        <div class="box-content">
+                            <table class="table table-striped table-bordered bootstrap-datatable datatable responsive">
+                                <thead>
+                                <tr>
+                                    <!--<th>Index</th>-->
+                                    <th id="tengah">Judul</th>
+                                    <th id="tengah">Nama Pekerjaan</th>
+                                    <th id="tengah">Unit</th>
+                                    <th id="tengah">Tahun</th>
+                                    <th id="tengah">Provinsi</th>
+                                    <th id="tengah">Kabupaten</th>
+                                    <th id="tengah">Kecamatan</th>
+                                    <th id="tengah">Desa</th>
+                                    <th id="tengah">Status</th>
+                                    <th id="tengah" width="15%">Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php foreach ($arsip as $arsips) { ?>
+                                <tr>
+                                    <!--<td><?php echo $arsips['index_arsip'];?></td>-->
+                                    <td id="tengah"><?php echo $arsips['judul'];?></td>
+                                    <td id="tengah"><?php echo $arsips['nm_pekerjaan'];?></td>
+                                    <td id="tengah"><?php echo $arsips['unit'];?></td>
+                                    <td id="tengah"><?php echo $arsips['tahun'];?></td>
+                                    <td id="tengah"><?php echo $arsips['provinsi'];?></td>
+                                    <td id="tengah"><?php echo $arsips['kabupaten'];?></td>
+                                    <td id="tengah"><?php echo $arsips['kecamatan'];?></td>
+                                    <td id="tengah"><?php echo $arsips['desa'];?></td>
+                                    <td id="tengah"><?php echo $arsips['status'];?></td>
+                                    <td id="tengah">
+                                        <a class="btn btn-success" href="<?php echo base_url().'arsip/detail_arsip/'.$arsips['kd_pekerjaan'];?>">
+                                            <i class="glyphicon glyphicon-zoom-in icon-white"></i>                                    
+                                        </a>
+                                        <a class="btn btn-info" href="#">
+                                            <i class="glyphicon glyphicon-edit icon-white"></i>
+                                        </a>
+                                        <a class="btn btn-danger" href="<?php echo base_url().'arsip/delete_arsip/'.$arsips['kd_pekerjaan'];?>">
+                                            <i class="glyphicon glyphicon-trash icon-white"></i>                                    
+                                        </a>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!--/span-->
+            </div><!--/row-->
             <!-- content ends -->
         </div><!--/#content.col-md-0-->
     </div><!--/fluid-row-->
