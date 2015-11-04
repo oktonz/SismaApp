@@ -16,7 +16,7 @@
         ===
     -->
     <meta charset="utf-8">
-    <title>Daftar Arsip - Sistem Manajemen Arsip</title>
+    <title>Pencarian - Sistem Manajemen Arsip</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
     <meta name="author" content="Muhammad Usman">
@@ -90,7 +90,63 @@
                 <div class="box col-md-12">
                     <div class="box-inner">
                         <div class="box-header well" data-original-title="">
-                            <h2><i class="glyphicon glyphicon-star-empty"></i> Daftar Arsip</h2>
+                            <h2><i class="glyphicon glyphicon-star-empty"></i> Pekerjaan</h2>
+
+                            <div class="box-icon">
+                                <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                                class="glyphicon glyphicon-chevron-up"></i></a>
+                                <a href="#" class="btn btn-close btn-round btn-default"><i
+                                class="glyphicon glyphicon-remove"></i></a>
+                            </div>
+                        </div>
+                        <div class="box-content">
+                            <table class="table table-striped table-bordered responsive">
+                                <thead>
+                                <tr>
+                                    <th>Judul</th>
+                                    <th>Kode</th>
+                                    <th>Nama Pekerjaan</th>
+                                    <th>Unit</th>
+                                    <th>Tahun</th>
+                                    <th>Provinsi</th>
+                                    <th>Kabupaten</th>
+                                    <th>Kecamatan</th>
+                                    <th>Desa</th>
+                                    <th>Status</th>
+                                    <th width="5%">Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($hasil as $has) { ?>
+                                    <tr>                                    
+                                        <td class="center"><?php echo $has['judul'];?></td>
+                                        <td class="center"><?php echo $has['kd_pekerjaan'];?></td>
+                                        <td class="center"><?php echo $has['nm_pekerjaan'];?></td>
+                                        <td class="center"><?php echo $has['unit'];?></td>
+                                        <td class="center"><?php echo $has['tahun'];?></td>
+                                        <td class="center"><?php echo $has['provinsi'];?></td>
+                                        <td class="center"><?php echo $has['kabupaten'];?></td>
+                                        <td class="center"><?php echo $has['kecamatan'];?></td>
+                                        <td class="center"><?php echo $has['desa'];?></td>
+                                        <td class="center"><?php echo $has['status'];?></td>
+                                        <td class="center">
+                                            <a class="btn btn-success" href="<?php echo base_url().'arsip/detail_arsip/'.$has['kd_pekerjaan'];?>">
+                                                <i class="glyphicon glyphicon-zoom-in icon-white"></i>                                    
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="box col-md-12">
+                    <div class="box-inner">
+                        <div class="box-header well" data-original-title="">
+                            <h2><i class="glyphicon glyphicon-star-empty"></i> Dokumen</h2>
 
                             <div class="box-icon">
                                 <a href="#" class="btn btn-minimize btn-round btn-default"><i
@@ -107,11 +163,12 @@
                                     <th>Perihal</th>
                                     <th>Asal</th>
                                     <th>Penerima</th>
-                                    <th>Kategori</th>
-                                    <th>Tanggal</th>
+                                    <th>Kategori</th>                                    
                                     <th>Sifat</th>
+                                    <th>Versi</th>
+                                    <th>Tanggal</th>
                                     <th>Kondisi</th>
-                                    <th>Action</th>
+                                    <th width="5%">Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -122,18 +179,61 @@
                                         <td class="center"><?php echo $has['asal'];?></td>
                                         <td class="center"><?php echo $has['penerima'];?></td>
                                         <td class="center"><?php echo $has['kategori'];?></td>
-                                        <td class="center"><?php echo $has['tgl_dok'];?></td>
                                         <td class="center"><?php echo $has['sifat'];?></td>
+                                        <td class="center"><?php echo $has['versi'];?></td>
+                                        <td class="center"><?php echo $has['tgl_dok'];?></td>
                                         <td class="center"><?php echo $has['kondisi'];?></td>
-                                        <td class="center" width="15%">
-                                            <a class="btn btn-success" href="<?php //echo base_url().'arsip/detail_arsip/'.$has['kd_pekerjaan'];?>">
+                                        <td class="center">
+                                            <a class="btn btn-success" href="<?php echo base_url().'arsip/detail_arsip/'.$has['kd_pekerjaan'];?>">
                                                 <i class="glyphicon glyphicon-zoom-in icon-white"></i>                                    
                                             </a>
-                                            <a class="btn btn-info" href="#">
-                                                <i class="glyphicon glyphicon-edit icon-white"></i>
-                                            </a>
-                                            <a class="btn btn-danger" href="#">
-                                                <i class="glyphicon glyphicon-trash icon-white"></i>                                    
+                                        </td>
+                                    </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="box col-md-12">
+                    <div class="box-inner">
+                        <div class="box-header well" data-original-title="">
+                            <h2><i class="glyphicon glyphicon-star-empty"></i> Lokasi</h2>
+
+                            <div class="box-icon">
+                                <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                                class="glyphicon glyphicon-chevron-up"></i></a>
+                                <a href="#" class="btn btn-close btn-round btn-default"><i
+                                class="glyphicon glyphicon-remove"></i></a>
+                            </div>
+                        </div>
+                        <div class="box-content">
+                            <table class="table table-striped table-bordered responsive">
+                                <thead>
+                                <tr>
+                                    <th>Gedung</th>
+                                    <th>Lantai</th>
+                                    <th>Rak</th>
+                                    <th>Baris</th>
+                                    <th>Kolom</th>
+                                    <th>Lokasi</th>
+                                    <th width="5%">Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($hasil as $has) { ?>
+                                    <tr>                                    
+                                        <td class="center"><?php echo $has['gedung'];?></td>
+                                        <td class="center"><?php echo $has['lantai'];?></td>
+                                        <td class="center"><?php echo $has['rak'];?></td>
+                                        <td class="center"><?php echo $has['baris'];?></td>
+                                        <td class="center"><?php echo $has['kolom'];?></td>                                        
+                                        <td class="center"><?php echo $has['lokasi'];?></td>                                        
+                                        <td class="center">
+                                            <a class="btn btn-success" href="<?php echo base_url().'lokasi/det_lokasi/'.$has['kd_lokasi'];?>">
+                                                <i class="glyphicon glyphicon-zoom-in icon-white"></i>                                    
                                             </a>
                                         </td>
                                     </tr>

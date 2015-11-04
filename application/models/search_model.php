@@ -9,6 +9,7 @@ Class Search_model extends CI_Model
 		$this->db->join('tbl_dokumen', 'tbl_pekerjaan.kd_pekerjaan = tbl_dokumen.kd_pekerjaan');
 		$this->db->join('tbl_lokasi', 'tbl_dokumen.no_dok = tbl_lokasi.no_dok');
 		$this->db->join('tbl_index', 'tbl_pekerjaan.index_arsip = tbl_index.index_arsip');
+		$this->db->join('tbl_maps', 'tbl_lokasi.kd_map = tbl_maps.kd_map');
 		$this->db->like('tbl_dokumen.no_dok', $match);
 		$this->db->or_like('nm_dok', $match);
 		$this->db->or_like('asal', $match);
@@ -20,7 +21,14 @@ Class Search_model extends CI_Model
 		$this->db->or_like('tbl_dokumen.keterangan', $match);
 		$this->db->or_like('tbl_pekerjaan.kd_pekerjaan', $match);
 		$this->db->or_like('nm_pekerjaan', $match);
+		$this->db->or_like('tahun', $match);
+		$this->db->or_like('provinsi', $match);
+		$this->db->or_like('kabupaten', $match);
+		$this->db->or_like('kecamatan', $match);
+		$this->db->or_like('desa', $match);
+		$this->db->or_like('status', $match);
 		$this->db->or_like('tbl_index.index_arsip', $match);
+		$this->db->or_like('judul', $match);
 		$query = $this->db->get();
 		return $query;
 	}
