@@ -12,7 +12,7 @@ $(document).ready(function() {
 			{ 
 				center: mapCenter, // map center
 				zoom: 5, //zoom level, 0 = earth view to higher value
-				maxZoom: 12,
+				maxZoom: 14,
 				minZoom: 5,
 				zoomControlOptions: {
 				style: google.maps.ZoomControlStyle.SMALL //zoom control size

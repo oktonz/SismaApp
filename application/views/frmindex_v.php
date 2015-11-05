@@ -78,13 +78,13 @@
             <div>
                 <ul class="breadcrumb">
                     <li>
-                        <a href="#">Home</a>
+                        <a href="#">SisMA</a>
                     </li>
                     <li>
                         <a href="#">Input</a>
                     </li>
                     <li>
-                        <a href="#">Input index</a>
+                        <a href="#">Index</a>
                     </li>
                 </ul>
             </div>

@@ -78,7 +78,7 @@
             <div>
                 <ul class="breadcrumb">
                     <li>
-                        <a href="#">Home</a>
+                        <a href="#">SisMA</a>
                     </li>
                     <li>
                         <a href="#">Pengaturan</a>
