@@ -1,197 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--
-        ===
-        This comment should NOT be removed.
+<!--
+    ===
+    This comment should NOT be removed.
 
-        Charisma v2.0.0
+    Charisma v2.0.0
 
-        Copyright 2012-2014 Muhammad Usman
-        Licensed under the Apache License v2.0
-        http://www.apache.org/licenses/LICENSE-2.0
+    Copyright 2012-2014 Muhammad Usman
+    Licensed under the Apache License v2.0
+    http://www.apache.org/licenses/LICENSE-2.0
 
-        http://usman.it
-        http://twitter.com/halalit_usman
-        ===
-    -->
-    <meta charset="utf-8">
-    <title>Tambah User - Sistem Manajemen Arsip</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
-    <meta name="author" content="Muhammad Usman">
+    http://usman.it
+    http://twitter.com/halalit_usman
+    ===
+-->
+<meta charset="utf-8">
+<title>Tambah User - Sistem Manajemen Arsip</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+<meta name="author" content="Muhammad Usman">
 
-    <!-- The styles -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/bootstrap-cerulean.min.css">
+<!-- The styles -->
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/bootstrap-cerulean.min.css">
 
-    <link href="<?php echo base_url().'assets/css/';?>charisma-app.css" rel="stylesheet">
-    <link href='<?php echo base_url().'assets/bower_components/fullcalendar/dist/';?>fullcalendar.css' rel='stylesheet'>
-    <link href='<?php echo base_url().'assets/bower_components/fullcalendar/dist/';?>fullcalendar.print.css' rel='stylesheet' media='print'>
-    <link href='<?php echo base_url().'assets/bower_components/chosen/';?>chosen.min.css' rel='stylesheet'>
-    <link href='<?php echo base_url().'assets/bower_components/colorbox/example3/';?>colorbox.css' rel='stylesheet'>
-    <link href='<?php echo base_url().'assets/bower_components/responsive-tables/';?>responsive-tables.css' rel='stylesheet'>
-    <link href='<?php echo base_url().'assets/bower_components/bootstrap-tour/build/css/';?>bootstrap-tour.min.css' rel='stylesheet'>
-    <link href='<?php echo base_url().'assets/css/';?>jquery.noty.css' rel='stylesheet'>
-    <link href='<?php echo base_url().'assets/css/';?>noty_theme_default.css' rel='stylesheet'>
-    <link href='<?php echo base_url().'assets/css/';?>elfinder.min.css' rel='stylesheet'>
-    <link href='<?php echo base_url().'assets/css/';?>elfinder.theme.css' rel='stylesheet'>
-    <link href='<?php echo base_url().'assets/css/';?>jquery.iphone.toggle.css' rel='stylesheet'>
-    <link href='<?php echo base_url().'assets/css/';?>uploadify.css' rel='stylesheet'>
-    <link href='<?php echo base_url().'assets/css/';?>animate.min.css' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/css/';?>maps-app.css">
-    
-    <!-- jQuery -->
-    <script src="<?php echo base_url()?>assets/bower_components/jquery/jquery.min.js"></script>
+<link href="<?php echo base_url().'assets/css/';?>charisma-app.css" rel="stylesheet">
+<link href='<?php echo base_url().'assets/bower_components/fullcalendar/dist/';?>fullcalendar.css' rel='stylesheet'>
+<link href='<?php echo base_url().'assets/bower_components/fullcalendar/dist/';?>fullcalendar.print.css' rel='stylesheet' media='print'>
+<link href='<?php echo base_url().'assets/bower_components/chosen/';?>chosen.min.css' rel='stylesheet'>
+<link href='<?php echo base_url().'assets/bower_components/colorbox/example3/';?>colorbox.css' rel='stylesheet'>
+<link href='<?php echo base_url().'assets/bower_components/responsive-tables/';?>responsive-tables.css' rel='stylesheet'>
+<link href='<?php echo base_url().'assets/bower_components/bootstrap-tour/build/css/';?>bootstrap-tour.min.css' rel='stylesheet'>
+<link href='<?php echo base_url().'assets/css/';?>jquery.noty.css' rel='stylesheet'>
+<link href='<?php echo base_url().'assets/css/';?>noty_theme_default.css' rel='stylesheet'>
+<link href='<?php echo base_url().'assets/css/';?>elfinder.min.css' rel='stylesheet'>
+<link href='<?php echo base_url().'assets/css/';?>elfinder.theme.css' rel='stylesheet'>
+<link href='<?php echo base_url().'assets/css/';?>jquery.iphone.toggle.css' rel='stylesheet'>
+<link href='<?php echo base_url().'assets/css/';?>uploadify.css' rel='stylesheet'>
+<link href='<?php echo base_url().'assets/css/';?>animate.min.css' rel='stylesheet'>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/css/';?>maps-app.css">
 
-    <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+<!-- jQuery -->
+<script src="<?php echo base_url()?>assets/bower_components/jquery/jquery.min.js"></script>
 
-    <!-- The fav icon -->
-    <link rel="shortcut icon" href="<?php echo base_url().'assets/img/';?>favicon.ico">
+<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- The fav icon -->
+<link rel="shortcut icon" href="<?php echo base_url().'assets/img/';?>favicon.ico">
 </head>
 
 <body>
-    <!-- topbar/header -->
-        <?php echo $topbar;?>
-    <!-- end topbar-->
+<!-- topbar/header -->
+    <?php echo $topbar;?>
+<!-- end topbar-->
 
 <div class="ch-container">
-    <div class="row">
-        
-        <!--Menu Navigasi-->
-            <?php echo $navigasi;?>
-        <!--End Navigasi-->
+<div class="row">
+    
+    <!--Menu Navigasi-->
+        <?php echo $navigasi;?>
+    <!--End Navigasi-->
 
-        <noscript>
-            <div class="alert alert-block col-md-12">
-                <h4 class="alert-heading">Warning!</h4>
+    <noscript>
+        <div class="alert alert-block col-md-12">
+            <h4 class="alert-heading">Warning!</h4>
 
-                <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
-                    enabled to use this site.</p>
-            </div>
-        </noscript>
+            <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
+                enabled to use this site.</p>
+        </div>
+    </noscript>
 
-        <div id="content" class="col-lg-10 col-sm-10">
-            <!-- content starts -->
-            <div>
-                <ul class="breadcrumb">
-                    <li>
-                        <a href="#">SisMA</a>
-                    </li>
-                    <li>
-                        <a href="#">Pengaturan</a>
-                    </li>
-                    <li>
-                        <a href="#">Daftar Users</a>
-                    </li>
-                    <li>
-                        <a href="#">Tambah Users</a>
-                    </li>
-                </ul>
-            </div>
+    <div id="content" class="col-lg-10 col-sm-10">
+        <!-- content starts -->
+        <div>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="#">SisMA</a>
+                </li>
+                <li>
+                    <a href="#">Pengaturan</a>
+                </li>
+                <li>
+                    <a href="#">Daftar Users</a>
+                </li>
+                <li>
+                    <a href="#">Tambah Users</a>
+                </li>
+            </ul>
+        </div>
 
-            <div class="row">
-                <div class="box col-md-12">
-                    <div class="box-inner">
-                        <div class="box-header well" data-original-title="">
-                            <h2><i class="glyphicon glyphicon-star-empty"></i> Form Tambah Users</h2>
+        <div class="row">
+            <div class="box col-md-12">
+                <div class="box-inner">
+                    <div class="box-header well" data-original-title="">
+                        <h2><i class="glyphicon glyphicon-star-empty"></i> Form Tambah Users</h2>
 
-                            <div class="box-icon">
-                                <a href="#" class="btn btn-minimize btn-round btn-default"><i
-                                        class="glyphicon glyphicon-chevron-up"></i></a>
-                                <a href="#" class="btn btn-close btn-round btn-default"><i
-                                        class="glyphicon glyphicon-remove"></i></a>
-                            </div>
-                        </div>
-                        <div class="box-content">
-                            <form class="form-horizontal" role="form" method="post" action="<?php echo base_url().'users/do_add_users';?>">
-                                <div class="form-group">
-                                  <label class="control-label col-sm-2" for="indexarsip">Nama Lengkap:</label>
-                                  <div class="col-sm-4">
-                                    <input type="text" class="form-control" name="txtnama">
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="control-label col-sm-2" for="provinsi">UserName:</label>
-                                  <div class="col-sm-4">          
-                                    <input type="text" class="form-control" name="txtusername">
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="control-label col-sm-2" for="kabupaten">Password:</label>
-                                  <div class="col-sm-4">          
-                                    <input type="password" class="form-control" name="txtpassword">
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="control-label col-sm-2" for="kodepkrj">Alamat:</label>
-                                  <div class="col-sm-4">          
-                                    <textarea class="form-control" rows="4" name="txtalamat"></textarea>
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="control-label col-sm-2" for="namapkrj">No Telp/HP:</label>
-                                  <div class="col-sm-4">          
-                                    <input type="text" class="form-control" name="txtnohp">
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="control-label col-sm-2" for="tahun">Tempat Lahir:</label>
-                                  <div class="col-sm-3">          
-                                    <input type="text" class="form-control" name="txttempatlahir">
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="control-label col-sm-2" for="tahun">Tanggal Lahir:</label>
-                                  <div class="col-sm-3">          
-                                    <input type="date" class="form-control" name="dtptgllahir">
-                                  </div>
-                                </div>                                
-                                <div class="form-group">
-                                  <label class="control-label col-sm-2" for="kecamatan">Role:</label>
-                                  <div class="col-sm-2">
-                                      <select class="form-control" id="sel" onchange="run()">
-                                        <option>Pilih Role</option>
-                                        <option>Super Admin</option>
-                                        <option>Admin</option>
-                                        <option>Viewer</option>                                     
-                                      </select>
-                                      <input type="hidden" name="cborole" id="hrole">
-                                  </div>
-                                </div>                                                                                                                    
-                                <div class="form-group">        
-                                  <div class="col-sm-offset-2 col-sm-10">
-                                    <button type="submit" class="btn btn-primary" name="cmdsimpan">Simpan</button>
-                                  </div>
-                                </div>
-                          </form>
+                        <div class="box-icon">
+                            <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                                    class="glyphicon glyphicon-chevron-up"></i></a>
+                            <a href="#" class="btn btn-close btn-round btn-default"><i
+                                    class="glyphicon glyphicon-remove"></i></a>
                         </div>
                     </div>
+                    <div class="box-content">
+                        <form class="form-horizontal" role="form" method="post" action="<?php echo base_url().'users/do_add_users';?>">
+                            <div class="form-group">
+                              <label class="control-label col-sm-2" for="indexarsip">Nama Lengkap:</label>
+                              <div class="col-sm-4">
+                                <input type="text" class="form-control" name="txtnama">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label col-sm-2" for="provinsi">UserName:</label>
+                              <div class="col-sm-4">          
+                                <input type="text" class="form-control" name="txtusername">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label col-sm-2" for="kabupaten">Password:</label>
+                              <div class="col-sm-4">          
+                                <input type="password" class="form-control" name="txtpassword">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label col-sm-2" for="kodepkrj">Alamat:</label>
+                              <div class="col-sm-4">          
+                                <textarea class="form-control" rows="4" name="txtalamat"></textarea>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label col-sm-2" for="email">Email:</label>
+                              <div class="col-sm-4">          
+                                <input type="text" class="form-control" name="txtemail">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label col-sm-2" for="namapkrj">No Telp/HP:</label>
+                              <div class="col-sm-4">          
+                                <input type="text" class="form-control" name="txtnohp">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label col-sm-2" for="tahun">Tempat Lahir:</label>
+                              <div class="col-sm-3">          
+                                <input type="text" class="form-control" name="txttempatlahir">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label col-sm-2" for="tahun">Tanggal Lahir:</label>
+                              <div class="col-sm-3">          
+                                <input type="date" class="form-control" name="dtptgllahir">
+                              </div>
+                            </div>                                
+                            <div class="form-group">
+                              <label class="control-label col-sm-2" for="kecamatan">Role:</label>
+                              <div class="col-sm-2">
+                                  <select class="form-control" id="sel" onchange="run()">
+                                    <option>Pilih Role</option>
+                                    <option>Super Admin</option>
+                                    <option>Admin</option>
+                                    <option>Viewer</option>                                     
+                                  </select>
+                                  <input type="hidden" name="cborole" id="hrole">
+                              </div>
+                            </div>                                                                                                                    
+                            <div class="form-group">        
+                              <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary" name="cmdsimpan">Simpan</button>
+                              </div>
+                            </div>
+                      </form>
+                    </div>
                 </div>
-            </div><!--/row-->
-            <!-- content ends -->
-        </div><!--/#content.col-md-0-->
-    </div><!--/fluid-row-->
+            </div>
+        </div><!--/row-->
+        <!-- content ends -->
+    </div><!--/#content.col-md-0-->
+</div><!--/fluid-row-->
 
-    <hr>
+<hr>
 
-    <footer class="row">
-        <p class="col-md-9 col-sm-9 col-xs-12 copyright">&copy; <a href="http://usman.it" target="_blank">Muhammad
-                Usman</a> 2012 - 2015 || redesign @jakarta 2015</p>
+<footer class="row">
+    <p class="col-md-9 col-sm-9 col-xs-12 copyright">&copy; <a href="http://usman.it" target="_blank">Muhammad
+            Usman</a> 2012 - 2015 || redesign @jakarta 2015</p>
 
-        <p class="col-md-3 col-sm-3 col-xs-12 powered-by">Powered by: <a
-                href="http://usman.it/free-responsive-admin-template">Charisma</a></p>
-    </footer>
+    <p class="col-md-3 col-sm-3 col-xs-12 powered-by">Powered by: <a
+            href="http://usman.it/free-responsive-admin-template">Charisma</a></p>
+</footer>
 
 </div><!--/.fluid-container-->
 
 <script>
-  function run()
-  {
-    document.getElementById("hrole").value = document.getElementById("sel").value;
-  }
+function run()
+{
+document.getElementById("hrole").value = document.getElementById("sel").value;
+}
 </script>
 
 <!-- external javascript -->

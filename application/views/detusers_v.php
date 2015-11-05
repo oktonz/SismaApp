@@ -121,6 +121,12 @@
                                   </div>
                                 </div>
                                 <div class="form-group">
+                                  <label class="control-label col-sm-2" for="alamat">Email : </label>
+                                  <div class="col-sm-8">          
+                                    <label class="control-label" for="dataalamat"><?php echo $user['email'];?></label>
+                                  </div>
+                                </div>
+                                <div class="form-group">
                                   <label class="control-label col-sm-2" for="nohp">Nomor HP : </label>
                                   <div class="col-sm-8">          
                                     <label class="control-label" for="data nohp"><?php echo $user['nohp'];?></label>

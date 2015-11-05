@@ -47,6 +47,7 @@ class Users extends CI_Controller {
 			$dat = array(
 			'nama' => $this->input->post('txtnama'),
 			'alamat' => $this->input->post('txtalamat'),
+			'email' => $this->input->post('txtemail'),
 			'nohp' => $this->input->post('txtnohp'),
 			'tpt_lahir' => $this->input->post('txttempatlahir'),
 			'tgl_lahir' => $this->input->post('dtptgllahir'),

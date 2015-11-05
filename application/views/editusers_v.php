@@ -136,6 +136,12 @@
                                   </div>
                                 </div>
                                 <div class="form-group">
+                                  <label class="control-label col-sm-2" for="kodepkrj">Email:</label>
+                                  <div class="col-sm-4">          
+                                    <input type="text" class="form-control" name="txtemail" value="<?php echo $u['email'];?>">
+                                  </div>
+                                </div>
+                                <div class="form-group">
                                   <label class="control-label col-sm-2" for="namapkrj">No Telp/HP:</label>
                                   <div class="col-sm-4">          
                                     <input type="text" class="form-control" name="txtnohp" value="<?php echo $u['nohp'];?>">

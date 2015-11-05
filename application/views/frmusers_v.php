@@ -106,30 +106,32 @@
                             <table class="table table-striped table-bordered responsive">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>Nama Lengkap</th>
-                                        <th>Alamat</th>
-                                        <th>Nomor Telp</th>
-                                        <th>Tempat Lahir</th>
-                                        <th>Tanggal Lahir</th>
-                                        <th>Username</th>
-                                        <th>Role</th>
-                                        <th width="15%">Action</th>
+                                        <th id="tengah">ID</th>
+                                        <th id="tengah">Nama Lengkap</th>
+                                        <th id="tengah">Alamat</th>
+                                        <th id="tengah">Email</th>
+                                        <th id="tengah">Nomor Telp</th>
+                                        <th id="tengah">Tempat Lahir</th>
+                                        <th id="tengah">Tanggal Lahir</th>
+                                        <th id="tengah">Username</th>
+                                        <th id="tengah">Role</th>
+                                        <th id="tengah" width="15%">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 <?php foreach ($dafusers as $us) { ?>
                                 <tr>
-                                    <td class="center"><?php echo $us['id']; ?></td>
-                                    <td class="center"><?php echo $us['nama']; ?></td>
-                                    <td class="center"><?php echo $us['alamat']; ?></td>
-                                    <td class="center"><?php echo $us['nohp']; ?></td>
-                                    <td class="center"><?php echo $us['tpt_lahir']; ?></td>
-                                    <td class="center"><?php echo $us['tgl_lahir']; ?></td>
-                                    <td class="center"><?php echo $us['username']; ?></td>
-                                    <td class="center"><?php echo $us['role']; ?></td>
+                                    <td id="tengah"><?php echo $us['id']; ?></td>
+                                    <td id="tengah"><?php echo $us['nama']; ?></td>
+                                    <td id="tengah"><?php echo $us['alamat']; ?></td>
+                                    <td id="tengah"><?php echo $us['email']; ?></td>
+                                    <td id="tengah"><?php echo $us['nohp']; ?></td>
+                                    <td id="tengah"><?php echo $us['tpt_lahir']; ?></td>
+                                    <td id="tengah"><?php echo $us['tgl_lahir']; ?></td>
+                                    <td id="tengah"><?php echo $us['username']; ?></td>
+                                    <td id="tengah"><?php echo $us['role']; ?></td>
                                    
-                                    <td class="center">
+                                    <td id="tengah">
                                         <a class="btn btn-success" href="<?php echo base_url().'users/detuser/'.$us['id'];?>">
                                             <i class="glyphicon glyphicon-zoom-in icon-white"></i>
                                             
