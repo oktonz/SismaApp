@@ -11,9 +11,9 @@ $(document).ready(function() {
 			var googleMapOptions = 
 			{ 
 				center: mapCenter, // map center
-				zoom: 13, //zoom level, 0 = earth view to higher value
-				maxZoom: 18,
-				minZoom: 8,
+				zoom: 5, //zoom level, 0 = earth view to higher value
+				maxZoom: 12,
+				minZoom: 5,
 				zoomControlOptions: {
 				style: google.maps.ZoomControlStyle.SMALL //zoom control size
 			},
