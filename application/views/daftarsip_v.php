@@ -99,7 +99,7 @@
                             <table class="table table-striped table-bordered bootstrap-datatable datatable responsive">
                                 <thead>
                                 <tr>
-                                    <!--<th>Index</th>-->
+                                    <th id="tengah" width="10%">Index</th>
                                     <th id="tengah">Judul</th>
                                     <th id="tengah">Nama Pekerjaan</th>
                                     <th id="tengah">Unit</th>
@@ -109,13 +109,13 @@
                                     <th id="tengah">Kecamatan</th>
                                     <th id="tengah">Desa</th>
                                     <th id="tengah">Status</th>
-                                    <th id="tengah" width="15%">Action</th>
+                                    <th id="tengah" width="5%">Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <?php foreach ($arsip as $arsips) { ?>
                                 <tr>
-                                    <!--<td><?php echo $arsips['index_arsip'];?></td>-->
+                                    <td id="tengah"><?php echo $arsips['index_arsip'];?></td>
                                     <td id="tengah"><?php echo $arsips['judul'];?></td>
                                     <td id="tengah"><?php echo $arsips['nm_pekerjaan'];?></td>
                                     <td id="tengah"><?php echo $arsips['unit'];?></td>
