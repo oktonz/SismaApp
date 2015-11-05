@@ -11,7 +11,7 @@ class Input extends CI_Controller {
 				'topbar' => $this->html_topbar(),
 				'navigasi' => $this->html_navigasi(),
 				'footer' => $this->html_footer(),
-				'auto' => $this->autonumber()
+				'auto' => $this->autonumidx()
 				);
 			$this->load->view('frmindex_v', $komponen);
 		}
@@ -84,7 +84,8 @@ class Input extends CI_Controller {
 				'topbar' => $this->html_topbar(),
 				'navigasi' => $this->html_navigasi(),
 				'footer' => $this->html_footer(),
-				'idx' => $result->result_array()
+				'idx' => $result->result_array(),
+				'auto' => $this->autonumpkrj()
 				);
 			$this->load->view('frmpkrj_v', $komponen);
 		}
@@ -195,7 +196,11 @@ class Input extends CI_Controller {
 		}
 	}
 
-	public function autonumber() {
+	public function autonumidx() {
 		return $this->input_model->autonum('tbl_index', 'index_arsip', 'IDX');
+	}
+
+	public function autonumpkrj() {
+		return $this->input_model->autonum('tbl_pekerjaan', 'kd_pekerjaan', 'PKJ');
 	}
 }

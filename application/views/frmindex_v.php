@@ -107,19 +107,19 @@
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="index">Index Arsip:</label>
                                   <div class="col-sm-4">
-                                    <input type="text" class="form-control" value="<?php echo $auto;?>" disabled name="txtidxarsip">
+                                    <input type="text" class="form-control" value="<?php echo $auto;?>" name="txtidxarsip" readonly>
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="judul">Judul Arsip:</label>
                                   <div class="col-sm-8">          
-                                    <input type="text" class="form-control" placeholder="Judul" name="txtjudularsip">
+                                    <input type="text" class="form-control" placeholder="Judul" name="txtjudularsip" required>
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="tanggal">Tanggal Input:</label>
                                   <div class="col-sm-6">          
-                                    <input type="date" class="form-control" name="dtpinput">
+                                    <input type="date" class="form-control" name="dtpinput" required>
                                   </div>
                                 </div>
                                 <div class="form-group">        

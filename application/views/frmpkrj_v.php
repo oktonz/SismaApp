@@ -119,7 +119,7 @@
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="kodepkrj">Kode Pekerjaan:</label>
                                   <div class="col-sm-4">          
-                                    <input type="text" class="form-control" name="txtkode">
+                                    <input type="text" class="form-control" name="txtkode" value="<?php echo $auto;?>" readonly>
                                   </div>
                                 </div>
                                 <div class="form-group">
