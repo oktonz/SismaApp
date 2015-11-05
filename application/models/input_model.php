@@ -39,5 +39,30 @@ Class Input_model extends CI_model
 	{
 		$this->db->insert('tbl_lokasi',$data);
 	}
+
+	public function autonum($tabel, $kolom, $awalan) {
+		$this->db->select($kolom);
+		$this->db->order_by($kolom, "desc");
+		$this->db->from($tabel);
+		$query = $this->db->get();
+
+		$jum = $query->num_rows();
+		if($jum == 0) {
+			$kod = $awalan."-".date('d').date('m').date('y')."/"."0001";
+		}
+		elseif($jum < 9) {
+			$kod = $awalan."-".date('d').date('m').date('y')."/"."000".strval($jum+1);
+		}
+		elseif($jum < 99) {
+			$kod = $awalan."-".date('d').date('m').date('y')."/"."00".strval($jum+1);
+		}
+		elseif($jum < 999) {
+			$kod = $awalan."-".date('d').date('m').date('y')."/"."0".strval($jum+1);
+		}
+		else {
+			$kod = $awalan."-".date('d').date('m').date('y')."/".strval($jum+1);
+		}
+		return $kod;
+	}
 }
 ?>

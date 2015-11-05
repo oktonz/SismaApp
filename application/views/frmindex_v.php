@@ -107,7 +107,7 @@
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="index">Index Arsip:</label>
                                   <div class="col-sm-4">
-                                    <input type="text" class="form-control" name="txtidxarsip">
+                                    <input type="text" class="form-control" value="<?php echo $auto;?>" disabled name="txtidxarsip">
                                   </div>
                                 </div>
                                 <div class="form-group">

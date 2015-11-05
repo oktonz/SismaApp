@@ -10,7 +10,8 @@ class Input extends CI_Controller {
 			$komponen = array(
 				'topbar' => $this->html_topbar(),
 				'navigasi' => $this->html_navigasi(),
-				'footer' => $this->html_footer()
+				'footer' => $this->html_footer(),
+				'auto' => $this->autonumber()
 				);
 			$this->load->view('frmindex_v', $komponen);
 		}
@@ -192,5 +193,9 @@ class Input extends CI_Controller {
 		//$error = array('error' => $this->upload->display_errors());
 		//$this->load->view('file_view', $error);
 		}
+	}
+
+	public function autonumber() {
+		return $this->input_model->autonum('tbl_index', 'index_arsip', 'IDX');
 	}
 }
