@@ -103,6 +103,7 @@
                             </div>
                         </div>
                         <div class="box-content">
+                            <input id="pac-input" type="text" class="form-control controls" placeholder="Koordinat / Nama Lokasi">
                             <div id="kanvas_map"></div>
 
                             <div class="clearfix"></div>
@@ -116,25 +117,6 @@
 
     <hr>
 
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-         aria-hidden="true">
-
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                    <h3>Settings</h3>
-                </div>
-                <div class="modal-body">
-                    <p>Here settings can be configured...</p>
-                </div>
-                <div class="modal-footer">
-                    <a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
-                    <a href="#" class="btn btn-primary" data-dismiss="modal">Save changes</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!--Footer-->
         <?php echo $footer;?>
@@ -176,7 +158,8 @@
 <!-- application script for Charisma demo -->
 <script src="<?php echo base_url();?>assets/js/charisma.js"></script>
 <!-- Google Maps API -->
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&callback=initAutocomplete"
+         async defer></script>
 <!-- JavaScript Maps-->
 <script type="text/javascript" src="<?php echo base_url().'assets/js/';?>maps-app.js"></script>
 
