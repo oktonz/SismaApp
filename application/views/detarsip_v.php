@@ -177,7 +177,7 @@
                                 </tr>
                                 <?php } ?>
                             </table>
-                            <a class="btn btn-primary" href="<?php echo base_url().'arsip';?>">Back</a>
+                            <button class="btn btn-primary" onClick="history.go(-1);return true;">Back</button>
                         </div>
                     </div>
                 </div>

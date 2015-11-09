@@ -114,6 +114,27 @@
 
     <hr>
 
+    <div class="modal fade" id="lokasi_dok" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h3>Mencari Dokumen di kabupaten yang telah di tandai</h3>
+                </div>
+                <div class="modal-body">
+                    <p>1. Cari lokasi atau marker di maps,</p>
+                    <p>2. hover atau arahkan kursor untuk melihat nama lokasi / kabupaten,</p>
+                    <p>3. klik marker jika merupakan lokasi yang dicari,</p>
+                    <p>4. klik dokumen untuk menampilkan dokumennya.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <!--Footer-->
         <?php echo $footer;?>
     <!--end Footer-->
@@ -158,6 +179,12 @@
          async defer></script>
 <!-- JavaScript Maps-->
 <script type="text/javascript" src="<?php echo base_url().'assets/js/';?>maps-appse.js"></script>
+
+<script type="text/javascript">
+    $(window).load(function(){
+        $('#lokasi_dok').modal('show');
+    });
+</script>
 
 </body>
 </html>

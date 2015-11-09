@@ -117,6 +117,27 @@
 
     <hr>
 
+    <div class="modal fade" id="modal_map" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h3>Cara Input Lokasi di Maps</h3>
+                </div>
+                <div class="modal-body">
+                    <p>1. Cari Lokasi yang ingin ditambahkan ke database,</p>
+                    <p>2. klik kanan pada map lokasi yang ingin di tambahkan,</p>
+                    <p>3. isikan nama kabupaten / lokasi,</p>
+                    <p>4. klik save lokasi.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!--Footer-->
         <?php echo $footer;?>
@@ -162,6 +183,12 @@
          async defer></script>
 <!-- JavaScript Maps-->
 <script type="text/javascript" src="<?php echo base_url().'assets/js/';?>maps-app.js"></script>
+
+<script type="text/javascript">
+    $(window).load(function(){
+        $('#modal_map').modal('show');
+    });
+</script>
 
 </body>
 </html>
