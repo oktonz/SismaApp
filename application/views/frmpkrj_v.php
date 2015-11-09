@@ -107,8 +107,8 @@
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="indexarsip">Index Arsip:</label>
                                   <div class="col-sm-3">
-                                      <select class="form-control" id="sel1" onchange="run1()">
-                                        <option value="No index">Pilih Index</option>
+                                      <select class="form-control" id="sel1" onchange="run1()" required>
+                                        <option value="">Pilih Index</option>
                                         <?php foreach ($idx as $inx) { ?>
                                         <option value="<?php echo $inx['index_arsip'];?>"><?php echo $inx['index_arsip'];?></option>
                                         <?php } ?>
@@ -125,14 +125,14 @@
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="namapkrj">Nama Pekerjaan:</label>
                                   <div class="col-sm-8">          
-                                    <input type="text" class="form-control" name="txtnamapkrj">
+                                    <input type="text" class="form-control" name="txtnamapkrj" required>
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="unit">Unit:</label>
                                   <div class="col-sm-2">
-                                      <select class="form-control" id="sel2" onchange="run2()">
-                                        <option>Unit</option>
+                                      <select class="form-control" id="sel2" onchange="run2()" required>
+                                        <option value="">Unit</option>
                                         <?php for ($i=1; $i <= 100; $i++) { ?>
                                         <option><?php echo $i;?></option>
                                         <?php } ?>
@@ -143,43 +143,43 @@
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="tahun">Tahun:</label>
                                   <div class="col-sm-2">          
-                                    <input type="text" class="form-control" name="txttahun">
+                                    <input type="text" class="form-control" name="txttahun" required pattern=".[0-9]{3}">
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="provinsi">Provinsi:</label>
                                   <div class="col-sm-4">          
-                                    <input type="text" class="form-control" name="txtprovinsi">
+                                    <input type="text" class="form-control" name="txtprovinsi" required>
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="kabupaten">Kabupaten:</label>
                                   <div class="col-sm-4">          
-                                    <input type="text" class="form-control" name="txtkabupaten">
+                                    <input type="text" class="form-control" name="txtkabupaten" required>
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="kecamatan">Kecamatan:</label>
                                   <div class="col-sm-4">          
-                                    <input type="text" class="form-control" name="txtkecamatan">
+                                    <input type="text" class="form-control" name="txtkecamatan" required>
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="desa">Desa:</label>
                                   <div class="col-sm-4">          
-                                    <input type="text" class="form-control" name="txtdesa">
+                                    <input type="text" class="form-control" name="txtdesa" required>
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="status">Status:</label>
                                   <div class="col-sm-2">          
-                                    <input type="text" class="form-control" name="txtstatus">
+                                    <input type="text" class="form-control" name="txtstatus" required>
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="ket">Keterangan:</label>
                                   <div class="col-sm-6">          
-                                    <textarea class="form-control" rows="5" name="txtket"></textarea>
+                                    <textarea class="form-control" rows="5" name="txtket" required></textarea>
                                   </div>
                                 </div>
                                 <div class="form-group">        
