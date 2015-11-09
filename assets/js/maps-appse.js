@@ -4,7 +4,7 @@
 
 function initAutocomplete() {
   var map = new google.maps.Map(document.getElementById('kanvas_map'), {
-    center: {lat: 1.257834, lng: 109.230453},
+    center: {lat: -1.265386, lng: 116.831200},
     zoom: 5, //zoom level, 0 = earth view to higher value
     maxZoom: 14,
     minZoom: 5,

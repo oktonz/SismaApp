@@ -55,13 +55,15 @@ div.marker-inner-win {
 }
 
 button.save-marker, button.remove-marker, button.daftar-dokumen {
-	border: 2px solid blue;
+	border: 2px solid #FFFFFF;
 	background: #70B8FF;
 	color: #FFFFFF;
 	padding: 5px;
 	text-decoration: none;
 	margin-right: 5px;
 	cursor: pointer;
+	font-weight: bold;
+	font-family: serif;
 }
 button:hover {
 	background: #5CADFF;
