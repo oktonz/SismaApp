@@ -127,6 +127,7 @@
                                   </div>
                                 </div>                                                              
                             </form>
+                            <hr>
                             <button onClick="history.go(-1);return true;" class="btn btn-primary">Back</button>                                
                         </div>
                     </div>

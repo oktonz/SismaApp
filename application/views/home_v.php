@@ -90,7 +90,11 @@
                 <div class="box col-md-12">
                     <div class="box-inner">
                         <div class="box-content">
-                            <h1 id="tengah">SISTEM MANAJEMEN ARSIP</h1>
+                            <h1 id="tengah">SISTEM</h1>
+                            <h1 id="tengah">MANAJEMEN ARSIP DIGITAL</h1>
+                            <h1 id="tengah">PT. Arsip Nasional</h1>                            
+                            <img src="<?php echo base_url().'assets/img/';?>home.png" style="margin:0px auto;display:block">
+                            <p style="text-align:right;">Version: 1.0</p>
                         </div>
                     </div>
                 </div>
