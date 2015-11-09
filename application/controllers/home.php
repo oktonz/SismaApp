@@ -74,4 +74,9 @@ class Home extends CI_Controller {
 			redirect('login');
 		}
 	}
+
+	public function test()
+	{
+		$this->load->view('file_view');
+	}
 }
