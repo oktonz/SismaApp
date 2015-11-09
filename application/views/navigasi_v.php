@@ -34,6 +34,7 @@
                             <a class="ajax-link" href="#"><i class="glyphicon glyphicon-wrench"></i><span> Pengaturan</span></a>
                             <ul class="nav nav-pills nav-stacked">
                                 <li><a href="<?php echo base_url().'users';?>">Users</a></li>
+                                <li><a href="<?php echo base_url().'informasi';?>">Informasi Data</a></li>
                             </ul>
                         </li>
                     </ul>

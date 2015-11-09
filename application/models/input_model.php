@@ -40,6 +40,13 @@ Class Input_model extends CI_model
 		$this->db->insert('tbl_lokasi',$data);
 	}
 
+	public function tot_aset()
+	{
+		$this->db->select_sum('unit');
+		$data = $this->db->get('tbl_pekerjaan');
+		return $data;
+	}
+
 	public function autonum($tabel, $kolom, $awalan) {
 		$this->db->select($kolom);
 		$this->db->order_by($kolom, "desc");
