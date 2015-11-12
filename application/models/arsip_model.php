@@ -17,7 +17,7 @@ Class arsip_model extends CI_Model
 		$this->db->select('*');
 		$this->db->from('tbl_index');
 		$this->db->join('tbl_pekerjaan', 'tbl_index.index_arsip = tbl_pekerjaan.index_arsip');
-		$this->db->where('kd_pekerjaan',$kd_pekerjaan);
+		$this->db->where('tbl_pekerjaan.kd_pekerjaan',$kd_pekerjaan);
 		$this->db->order_by('tbl_index.index_arsip');
 		$data = $this->db->get();
 		return $data;
@@ -67,6 +67,12 @@ Class arsip_model extends CI_Model
 		$this->db->order_by('tbl_lokasi.kd_lokasi');
 		$data = $this->db->get();
 		return $data;
+	}
+
+	function edit_arsip($kd, $data)
+	{
+		$this->db->where('kd_pekerjaan', $kd);
+		$this->db->update('tbl_pekerjaan', $data);
 	}
 }
 ?>

@@ -65,6 +65,52 @@ class Arsip extends CI_Controller {
 		}
 	}
 
+	public function edit_arsip($kode)
+	{
+		if($this->session->userdata('logged_in'))
+		{	
+			$arsip = $this->arsip_model->get_det_arsip($kode);	
+			$indx = $this->input_model->get_index();
+   			$pkj = $this->input_model->get_pekerjaan();
+   			$dok = $this->arsip_model->get_dokumen($kode);
+			$session_data = $this->session->userdata('logged_in');
+			$komponen = array(
+				'topbar' => $this->html_topbar(),
+				'navigasi' => $this->html_navigasi(),
+				'footer' => $this->html_footer(),
+				'arsip' => $arsip->result_array(),
+				'idx' => $indx->result_array(),
+				'pekerjaan' => $pkj->result_array(),
+				'dokumen' => $dok->result_array()				
+				);
+			$this->load->view('editarsip_v', $komponen);
+		}
+		else
+		{
+			redirect('login');
+		}
+	}
+
+	public function do_edit_arsip()
+	{
+		$kode = $this->input->post('txtkode');
+		$dat = array(
+			'kd_pekerjaan' => $kode,
+			'nm_pekerjaan' => $this->input->post('txtnamapkrj'),
+			'unit' => $this->input->post('cbounit'),
+			'tahun' => $this->input->post('txttahun'),
+			'provinsi' => $this->input->post('txtprovinsi'),
+			'kabupaten' => $this->input->post('txtkabupaten'),
+			'kecamatan' => $this->input->post('txtkecamatan'),
+			'desa' => $this->input->post('txtdesa'),
+			'status' => $this->input->post('txtstatus'),
+			'keterangan' => $this->input->post('txtket'),
+			'index_arsip' => $this->input->post('cboidx'),
+		);
+		$this->arsip_model->edit_arsip($kode, $dat);		
+		redirect('arsip');
+	}
+
 	public function html_topbar()
 	{
 		$session_data = $this->session->userdata('logged_in');

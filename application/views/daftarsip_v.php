@@ -129,7 +129,7 @@
                                         <a class="btn btn-success" href="<?php echo base_url().'arsip/detail_arsip/'.$arsips['kd_pekerjaan'];?>">
                                             <i class="glyphicon glyphicon-zoom-in icon-white"></i>                                    
                                         </a>
-                                        <a class="btn btn-info" href="#">
+                                        <a class="btn btn-info" href="<?php echo base_url().'arsip/edit_arsip/'.$arsips['kd_pekerjaan'];?>">
                                             <i class="glyphicon glyphicon-edit icon-white"></i>
                                         </a>
                                         <a class="btn btn-danger" href="<?php echo base_url().'arsip/delete_arsip/'.$arsips['kd_pekerjaan'];?>"
