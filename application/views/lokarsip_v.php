@@ -135,7 +135,7 @@
                                             <a class="btn btn-success" href="<?php echo base_url().'lokasi/det_lokasi/'.$loks['kd_lokasi'];?>">
                                                 <i class="glyphicon glyphicon-zoom-in icon-white"></i>
                                             </a>
-                                            <a class="btn btn-info" href="#">
+                                            <a class="btn btn-info" href="<?php echo base_url().'lokasi/edit_lokasi/'.$loks['kd_lokasi'];?>">
                                                 <i class="glyphicon glyphicon-edit icon-white"></i>
                                             </a>
                                             <a class="btn btn-danger" href="<?php echo base_url().'lokasi/delete_lokasi/'.$loks['kd_lokasi'];?>"

@@ -25,7 +25,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a class="ajax-link" href="<?php echo base_url().'lokasi';?>"><i class="glyphicon glyphicon-list-alt"></i><span> Lokasi Arsip</span></a>
+                            <a class="ajax-link" href="<?php echo base_url().'lokasi';?>"><i class="glyphicon glyphicon-list-alt"></i><span> Lokasi Dokumen</span></a>
                         </li>
                         <li>
                             <a class="ajax-link" href="<?php echo base_url().'maps';?>"><i class="glyphicon glyphicon-map-marker"></i><span> Maps</span></a>

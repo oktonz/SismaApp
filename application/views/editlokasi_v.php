@@ -16,7 +16,7 @@
         ===
     -->
     <meta charset="utf-8">
-    <title>Detail Arsip - Sistem Manajemen Arsip</title>
+    <title>Edit Lokasi Dokumen - Sistem Manajemen Arsip</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
     <meta name="author" content="Muhammad Usman">
@@ -81,10 +81,10 @@
                         <a href="#">SisMA</a>
                     </li>
                     <li>
-                        <a href="#">Arsip</a>
+                        <a href="#">Lokasi</a>
                     </li>
                     <li>
-                        <a href="#">Detail Arsip</a>
+                        <a href="#">Edit Lokasi</a>
                     </li>
                 </ul>
             </div>
@@ -93,7 +93,7 @@
                 <div class="box col-md-12">
                     <div class="box-inner">
                         <div class="box-header well" data-original-title="">
-                            <h2><i class="glyphicon glyphicon-star-empty"></i> Detail Arsip</h2>
+                            <h2><i class="glyphicon glyphicon-star-empty"></i> Form Edit Lokasi</h2>
 
                             <div class="box-icon">
                                 <a href="#" class="btn btn-minimize btn-round btn-default"><i
@@ -103,94 +103,66 @@
                             </div>
                         </div>
                         <div class="box-content">
-                            <table>
-                                <?php foreach ($detarsip as $detar) { ?>                                
-                                <tr>
-                                    <td>Index</td>
-                                    <td><?php echo $detar['index_arsip'];?></td>
-                                </tr>   
-                                <tr>
-                                    <td>Judul</td>
-                                    <td><?php echo $detar['judul'];?></td>
-                                </tr>
-                                <tr>
-                                    <td>Nama Pekerjaan</td>
-                                    <td><?php echo $detar['nm_pekerjaan'];?></td>
-                                </tr>
-                                <tr>
-                                    <td>Unit</td>
-                                    <td><?php echo $detar['unit'];?> Unit</td>
-                                </tr>
-                                <tr>
-                                    <td>Tahun</td>
-                                    <td><?php echo $detar['tahun'];?></td>
-                                </tr>
-                                <tr>
-                                    <td>Provinsi</td>
-                                    <td><?php echo $detar['provinsi'];?></td>
-                                </tr>
-                                <tr>
-                                    <td>Kabupaten</td>
-                                    <td><?php echo $detar['kabupaten'];?></td>
-                                </tr>
-                                <tr>
-                                    <td>Kecamatan</td>
-                                    <td><?php echo $detar['kecamatan'];?></td>
-                                </tr>
-                                <tr>
-                                    <td>Desa</td>
-                                    <td><?php echo $detar['desa'];?></td>
-                                </tr>
-                                <tr>
-                                    <td>Status</td>
-                                    <td><?php echo $detar['status'];?></td>
-                                </tr>
-                                <tr>
-                                    <td>Keterangan</td>
-                                    <td><?php echo $detar['keterangan'];?></td>
-                                </tr>
+                            <form class="form-horizontal" role="form" method="post" action="<?php echo base_url().'lokasi/do_edit_lokasi';?>" enctype="multipart/form-data"> 
+                              <?php foreach ($lokasi as $lk) { ?> 
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="gedung">Dokumen Tersimpan:</label>
+                                  <div class="col-sm-4">          
+                                    <input type="text" class="form-control" name="txtdoktersimpan" value="<?php echo $lk['no_dok'];?>" readonly>
+                                    <input type="text" class="form-control" name="txtdoktersimpan" value="<?php echo $lk['nm_dok'];?>" readonly>          
+                                  </div>
+                                </div>    
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="indexarsip">Lokasi:</label>
+                                  <div class="col-sm-3">
+                                    <?php
+                                        $select = $lk['kd_map'];                                                                              
+                                        $items = array();
+                                        foreach ($maps as $lok) {
+                                          $items[$lok['kd_map']] = $lok['lokasi'];
+                                        }                                                                                                                  
+                                      echo form_dropdown('cbolok', $items, $select, 'class="form-control"');
+                                    ?>   
+                                    <?php echo form_hidden('txtidlok', $lk['kd_lokasi']);?>                                
+                                  </div>
+                                </div>                                                                                                                                                                                  
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="gedung">Gedung:</label>
+                                  <div class="col-sm-4">          
+                                    <input type="text" class="form-control" name="txtgedung" value="<?php echo $lk['gedung'];?>">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="lantai">Lantai:</label>
+                                  <div class="col-sm-2">          
+                                    <input type="text" class="form-control" name="txtlantai" value="<?php echo $lk['lantai'];?>">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="rak">Rak:</label>
+                                  <div class="col-sm-2">          
+                                    <input type="text" class="form-control" name="txtrak" value="<?php echo $lk['rak'];?>">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="baris">Baris:</label>
+                                  <div class="col-sm-2">          
+                                    <input type="text" class="form-control" name="txtbaris" value="<?php echo $lk['baris'];?>">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="kolom">Kolom:</label>
+                                  <div class="col-sm-2">          
+                                    <input type="text" class="form-control" name="txtkolom" value="<?php echo $lk['kolom'];?>">
+                                  </div>
+                                </div>
+                                <div class="form-group">        
+                                  <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-primary" name="cmdsimpan">Simpan</button>
+                                  </div>
+                                </div>
                                 <?php } ?>
-                            </table>
-                            <hr>
-                            <h4>Info Dokumen</h4>
-                            <table class="table table-striped table-bordered responsive">
-                                <thead>
-                                <tr>
-                                    <th id="tengah">No Dokumen</th>
-                                    <th id="tengah">Nama Dokumen</th>
-                                    <th id="tengah">Kategori</th>
-                                    <th id="tengah">Tanggal</th>
-                                    <th id="tengah">Asal</th>
-                                    <th id="tengah">Penerima</th>
-                                    <th id="tengah">Link File</th>
-                                    <th id="tengah">Action</th>
-                                </tr>
-                                </thead>
-                                <?php foreach ($dokumen as $doks) { ?>                                
-                                <tr>
-                                    <td id="tengah"><?php echo $doks['no_dok'];?></td>
-                                    <td id="tengah"><?php echo $doks['nm_dok'];?></td>
-                                    <td id="tengah"><?php echo $doks['kategori'];?></td>
-                                    <td id="tengah"><?php echo $doks['tgl_dok'];?></td>
-                                    <td id="tengah"><?php echo $doks['asal'];?></td>
-                                    <td id="tengah"><?php echo $doks['penerima'];?></td>
-                                    <td id="tengah"><a href="<?php echo base_url().$doks['file_path'];?>" target="_blank">File</a></td>
-                                    <td id="tengah">
-                                        <a class="btn btn-success" href="<?php //echo base_url().'arsip/detail_arsip/'.$arsips['kd_pekerjaan'];?>">
-                                            <i class="glyphicon glyphicon-zoom-in icon-white"></i>                                    
-                                        </a>
-                                        <a class="btn btn-info" href="<?php //echo base_url().'arsip/edit_arsip/'.$arsips['kd_pekerjaan'];?>">
-                                            <i class="glyphicon glyphicon-edit icon-white"></i>
-                                        </a>
-                                        <a class="btn btn-danger" href="<?php echo base_url().'lokasi/delete_lokasi/'.$doks['kd_lokasi'];?>"
-                                            onclick="return confirm('Yakin Akan dihapus ?');" >
-                                            <i class="glyphicon glyphicon-trash icon-white"></i>                                    
-                                        </a>
-                                    </td>
-                                </tr>
-                                <?php } ?>
-                            </table>
-                            <button class="btn btn-primary" onClick="history.go(-1);return true;">Back</button>
+                          </form>
                         </div>
                     </div>
                 </div>
@@ -225,6 +197,17 @@
         <?php echo $footer;?>
     <!--end Footer-->
 </div><!--/.fluid-container-->
+
+<script>
+  function run1()
+  {
+    document.getElementById("hpkj").value = document.getElementById("sel1").value;
+  }
+  function run2()
+  {
+    document.getElementById("hlok").value = document.getElementById("sel2").value;
+  }
+</script>
 
 <!-- external javascript -->
 
