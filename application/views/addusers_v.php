@@ -110,59 +110,59 @@
                             <div class="form-group">
                               <label class="control-label col-sm-2" for="indexarsip">Nama Lengkap:</label>
                               <div class="col-sm-4">
-                                <input type="text" class="form-control" name="txtnama">
+                                <input type="text" class="form-control" name="txtnama" required>
                               </div>
                             </div>
                             <div class="form-group">
                               <label class="control-label col-sm-2" for="provinsi">UserName:</label>
                               <div class="col-sm-4">          
-                                <input type="text" class="form-control" name="txtusername">
+                                <input type="text" class="form-control" name="txtusername" required>
                               </div>
                             </div>
                             <div class="form-group">
                               <label class="control-label col-sm-2" for="kabupaten">Password:</label>
                               <div class="col-sm-4">          
-                                <input type="password" class="form-control" name="txtpassword">
+                                <input type="password" class="form-control" name="txtpassword" required>
                               </div>
                             </div>
                             <div class="form-group">
                               <label class="control-label col-sm-2" for="kodepkrj">Alamat:</label>
                               <div class="col-sm-4">          
-                                <textarea class="form-control" rows="4" name="txtalamat"></textarea>
+                                <textarea class="form-control" rows="4" name="txtalamat" required></textarea>
                               </div>
                             </div>
                             <div class="form-group">
                               <label class="control-label col-sm-2" for="email">Email:</label>
                               <div class="col-sm-4">          
-                                <input type="text" class="form-control" name="txtemail">
+                                <input type="email" class="form-control" name="txtemail" required>
                               </div>
                             </div>
                             <div class="form-group">
                               <label class="control-label col-sm-2" for="namapkrj">No Telp/HP:</label>
                               <div class="col-sm-4">          
-                                <input type="text" class="form-control" name="txtnohp">
+                                <input type="text" class="form-control" name="txtnohp" required pattern=".[0-9]{1,}">
                               </div>
                             </div>
                             <div class="form-group">
                               <label class="control-label col-sm-2" for="tahun">Tempat Lahir:</label>
                               <div class="col-sm-3">          
-                                <input type="text" class="form-control" name="txttempatlahir">
+                                <input type="text" class="form-control" name="txttempatlahir" required>
                               </div>
                             </div>
                             <div class="form-group">
                               <label class="control-label col-sm-2" for="tahun">Tanggal Lahir:</label>
                               <div class="col-sm-3">          
-                                <input type="date" class="form-control" name="dtptgllahir">
+                                <input type="date" class="form-control" name="dtptgllahir" required>
                               </div>
                             </div>                                
                             <div class="form-group">
                               <label class="control-label col-sm-2" for="kecamatan">Role:</label>
                               <div class="col-sm-2">
-                                  <select class="form-control" id="sel" onchange="run()">
-                                    <option>Pilih Role</option>
-                                    <option>Super Admin</option>
-                                    <option>Admin</option>
-                                    <option>Viewer</option>                                     
+                                  <select class="form-control" id="sel" onchange="run()" required>
+                                    <option value="">Pilih Role</option>
+                                    <option value="Super Admin">Super Admin</option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="Viewer">Viewer</option>                                     
                                   </select>
                                   <input type="hidden" name="cborole" id="hrole">
                               </div>

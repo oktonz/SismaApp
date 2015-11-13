@@ -103,33 +103,35 @@
                             <table class="table table-striped table-bordered responsive">
                                 <thead>
                                 <tr>
-                                    <th>Judul</th>
-                                    <th>Kode</th>
-                                    <th>Nama Pekerjaan</th>
-                                    <th>Unit</th>
-                                    <th>Tahun</th>
-                                    <th>Provinsi</th>
-                                    <th>Kabupaten</th>
-                                    <th>Kecamatan</th>
-                                    <th>Desa</th>
-                                    <th>Status</th>
+                                    <th id="tengah">Index</th>
+                                    <th id="tengah">Judul</th>
+                                    <th id="tengah">Kode</th>
+                                    <th id="tengah">Nama Pekerjaan</th>
+                                    <th id="tengah">Unit</th>
+                                    <th id="tengah">Tahun</th>
+                                    <th id="tengah">Provinsi</th>
+                                    <th id="tengah">Kabupaten</th>
+                                    <th id="tengah">Kecamatan</th>
+                                    <th id="tengah">Desa</th>
+                                    <th id="tengah">Status</th>
                                     <th width="5%">Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                     <?php foreach ($hasil as $has) { ?>
-                                    <tr>                                    
-                                        <td class="center"><?php echo $has['judul'];?></td>
-                                        <td class="center"><?php echo $has['kd_pekerjaan'];?></td>
-                                        <td class="center"><?php echo $has['nm_pekerjaan'];?></td>
-                                        <td class="center"><?php echo $has['unit'];?></td>
-                                        <td class="center"><?php echo $has['tahun'];?></td>
-                                        <td class="center"><?php echo $has['provinsi'];?></td>
-                                        <td class="center"><?php echo $has['kabupaten'];?></td>
-                                        <td class="center"><?php echo $has['kecamatan'];?></td>
-                                        <td class="center"><?php echo $has['desa'];?></td>
-                                        <td class="center"><?php echo $has['status'];?></td>
-                                        <td class="center">
+                                    <tr>     
+                                        <td id="tengah"><?php echo $has['index_arsip'];?></td>                           
+                                        <td id="tengah"><?php echo $has['judul'];?></td>
+                                        <td id="tengah"><?php echo $has['kd_pekerjaan'];?></td>
+                                        <td id="tengah"><?php echo $has['nm_pekerjaan'];?></td>
+                                        <td id="tengah"><?php echo $has['unit'];?></td>
+                                        <td id="tengah"><?php echo $has['tahun'];?></td>
+                                        <td id="tengah"><?php echo $has['provinsi'];?></td>
+                                        <td id="tengah"><?php echo $has['kabupaten'];?></td>
+                                        <td id="tengah"><?php echo $has['kecamatan'];?></td>
+                                        <td id="tengah"><?php echo $has['desa'];?></td>
+                                        <td id="tengah"><?php echo $has['status'];?></td>
+                                        <td id="tengah">
                                             <a class="btn btn-success" href="<?php echo base_url().'arsip/detail_arsip/'.$has['kd_pekerjaan'];?>">
                                                 <i class="glyphicon glyphicon-zoom-in icon-white"></i>                                    
                                             </a>
@@ -159,36 +161,38 @@
                             <table class="table table-striped table-bordered responsive">
                                 <thead>
                                 <tr>
-                                    <th>No Dokumen</th>
-                                    <th>Perihal</th>
-                                    <th>Asal</th>
-                                    <th>Penerima</th>
-                                    <th>Kategori</th>                                    
-                                    <th>Sifat</th>
-                                    <th>Versi</th>
-                                    <th>Tanggal</th>
-                                    <th>Kondisi</th>
+                                    <th id="tengah">No Dokumen</th>
+                                    <th id="tengah">Perihal</th>
+                                    <th id="tengah">Asal</th>
+                                    <th id="tengah">Penerima</th>
+                                    <th id="tengah">Kategori</th>                                    
+                                    <th id="tengah">Sifat</th>
+                                    <th id="tengah">Versi</th>
+                                    <th id="tengah">Tanggal</th>
+                                    <th id="tengah">Kondisi</th>
                                     <th width="5%">Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                     <?php foreach ($hasil as $has) { ?>
+                                    <?php if (is_null($has['no_dok'])) { } else { ?>
                                     <tr>                                    
-                                        <td class="center"><?php echo $has['no_dok'];?></td>
-                                        <td class="center"><?php echo $has['nm_dok'];?></td>
-                                        <td class="center"><?php echo $has['asal'];?></td>
-                                        <td class="center"><?php echo $has['penerima'];?></td>
-                                        <td class="center"><?php echo $has['kategori'];?></td>
-                                        <td class="center"><?php echo $has['sifat'];?></td>
-                                        <td class="center"><?php echo $has['versi'];?></td>
-                                        <td class="center"><?php echo $has['tgl_dok'];?></td>
-                                        <td class="center"><?php echo $has['kondisi'];?></td>
-                                        <td class="center">
+                                        <td id="tengah"><?php echo $has['no_dok'];?></td>
+                                        <td id="tengah"><?php echo $has['nm_dok'];?></td>
+                                        <td id="tengah"><?php echo $has['asal'];?></td>
+                                        <td id="tengah"><?php echo $has['penerima'];?></td>
+                                        <td id="tengah"><?php echo $has['kategori'];?></td>
+                                        <td id="tengah"><?php echo $has['sifat'];?></td>
+                                        <td id="tengah"><?php echo $has['versi'];?></td>
+                                        <td id="tengah"><?php echo $has['tgl_dok'];?></td>
+                                        <td id="tengah"><?php echo $has['kondisi'];?></td>
+                                        <td id="tengah">
                                             <a class="btn btn-success" href="<?php echo base_url().'arsip/detail_arsip/'.$has['kd_pekerjaan'];?>">
                                                 <i class="glyphicon glyphicon-zoom-in icon-white"></i>                                    
                                             </a>
                                         </td>
                                     </tr>
+                                    <?php } ?>                                                                                                  
                                     <?php } ?>
                                 </tbody>
                             </table>
@@ -213,30 +217,32 @@
                             <table class="table table-striped table-bordered responsive">
                                 <thead>
                                 <tr>
-                                    <th>Gedung</th>
-                                    <th>Lantai</th>
-                                    <th>Rak</th>
-                                    <th>Baris</th>
-                                    <th>Kolom</th>
-                                    <th>Lokasi</th>
+                                    <th id="tengah">Gedung</th>
+                                    <th id="tengah">Lantai</th>
+                                    <th id="tengah">Rak</th>
+                                    <th id="tengah">Baris</th>
+                                    <th id="tengah">Kolom</th>
+                                    <th id="tengah">Lokasi</th>
                                     <th width="5%">Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                     <?php foreach ($hasil as $has) { ?>
+                                    <?php if (is_null($has['no_dok'])) { } else { ?>
                                     <tr>                                    
-                                        <td class="center"><?php echo $has['gedung'];?></td>
-                                        <td class="center"><?php echo $has['lantai'];?></td>
-                                        <td class="center"><?php echo $has['rak'];?></td>
-                                        <td class="center"><?php echo $has['baris'];?></td>
-                                        <td class="center"><?php echo $has['kolom'];?></td>                                        
-                                        <td class="center"><?php echo $has['lokasi'];?></td>                                        
-                                        <td class="center">
+                                        <td id="tengah"><?php echo $has['gedung'];?></td>
+                                        <td id="tengah"><?php echo $has['lantai'];?></td>
+                                        <td id="tengah"><?php echo $has['rak'];?></td>
+                                        <td id="tengah"><?php echo $has['baris'];?></td>
+                                        <td id="tengah"><?php echo $has['kolom'];?></td>                                        
+                                        <td id="tengah"><?php echo $has['lokasi'];?></td>                                        
+                                        <td id="tengah">
                                             <a class="btn btn-success" href="<?php echo base_url().'lokasi/det_lokasi/'.$has['kd_lokasi'];?>">
                                                 <i class="glyphicon glyphicon-zoom-in icon-white"></i>                                    
                                             </a>
                                         </td>
                                     </tr>
+                                    <?php } ?> 
                                     <?php } ?>
                                 </tbody>
                             </table>
