@@ -107,8 +107,8 @@
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="pekerjaan">Nama Pekerjaan:</label>
                                   <div class="col-sm-6">
-                                      <select class="form-control" id="sel1" onchange="run1()">
-                                        <option value="No index">Pilih Pekerjaan</option>
+                                      <select class="form-control" id="sel1" onchange="run1()" required> 
+                                        <option value="">Pilih Pekerjaan</option>
                                         <?php foreach ($pekerjaan as $pkj) { ?>
                                         <option value="<?php echo $pkj['kd_pekerjaan'];?>"><?php echo $pkj['nm_pekerjaan'];?></option>
                                         <?php } ?>
@@ -119,73 +119,73 @@
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="nodok">Nomor Dokumen:</label>
                                   <div class="col-sm-4">          
-                                    <input type="text" class="form-control" name="txtnodok">
+                                    <input type="text" class="form-control" name="txtnodok" required>
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="perihal">Perihal:</label>
                                   <div class="col-sm-8">          
-                                    <input type="text" class="form-control" name="txtperihal">
+                                    <input type="text" class="form-control" name="txtperihal" required>
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="asaldok">Asal Dokumen:</label>
                                   <div class="col-sm-5">          
-                                    <input type="text" class="form-control" name="txtasaldok">
+                                    <input type="text" class="form-control" name="txtasaldok" required>
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="penerimadok">Penerima Dokumen:</label>
                                   <div class="col-sm-5">          
-                                    <input type="text" class="form-control" name="txtpenerimadok">
+                                    <input type="text" class="form-control" name="txtpenerimadok" required>
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="sifat">Sifat Kepentingan:</label>
                                   <div class="col-sm-3">          
-                                    <input type="text" class="form-control" name="txtsifatkep">
+                                    <input type="text" class="form-control" name="txtsifatkep" required>
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="kategori">Kategori:</label>
                                   <div class="col-sm-4">          
-                                    <input type="text" class="form-control" name="txtkategori">
+                                    <input type="text" class="form-control" name="txtkategori" required>
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="versi">Versi:</label>
                                   <div class="col-sm-4">          
-                                    <input type="text" class="form-control" name="txtversi">
+                                    <input type="text" class="form-control" name="txtversi" required>
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="tgldok">Tanggal Dokumen:</label>
                                   <div class="col-sm-4">          
-                                    <input type="date" class="form-control" name="dtptgldok">
+                                    <input type="date" class="form-control" name="dtptgldok" required>
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="tglterima">Tanggal Terima:</label>
                                   <div class="col-sm-4">          
-                                    <input type="date" class="form-control" name="dtptglterima">
+                                    <input type="date" class="form-control" name="dtptglterima" required>
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="kondisidok">Kondisi Dokumen:</label>
                                   <div class="col-sm-4">          
-                                    <input type="text" class="form-control" name="txtkondisidok">
+                                    <input type="text" class="form-control" name="txtkondisidok" required>
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="ket">Keterangan:</label>
                                   <div class="col-sm-6">          
-                                    <textarea class="form-control" rows="5" name="txtket"></textarea>
+                                    <textarea class="form-control" rows="5" name="txtket" required></textarea>
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="filedok">File Dokumen:</label>
                                   <div class="col-sm-4">          
-                                    <input type="file" class="form-control" name="userfile">
+                                    <input type="file" class="form-control" name="userfile" required>
                                   </div>
                                 </div>
                                 <hr />
@@ -193,8 +193,8 @@
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="lokasi">Lokasi:</label>
                                   <div class="col-sm-4">          
-                                      <select class="form-control" id="sel2" onchange="run2()">
-                                        <option value="No index">Pilih Lokasi</option>
+                                      <select class="form-control" id="sel2" onchange="run2()" required>
+                                        <option value="">Pilih Lokasi</option>
                                         <?php foreach ($maps as $lok) { ?>
                                         <option value="<?php echo $lok['kd_map'];?>"><?php echo $lok['lokasi'];?></option>
                                         <?php } ?>
@@ -204,32 +204,32 @@
                                 </div>
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="gedung">Gedung:</label>
-                                  <div class="col-sm-4">          
-                                    <input type="text" class="form-control" name="txtgedung">
+                                  <div class="col-sm-3">          
+                                    <input type="text" class="form-control" name="txtgedung" required>
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="lantai">Lantai:</label>
-                                  <div class="col-sm-4">          
-                                    <input type="text" class="form-control" name="txtlantai">
+                                  <div class="col-sm-3">          
+                                    <input type="text" class="form-control" name="txtlantai" required>
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="rak">Rak:</label>
-                                  <div class="col-sm-4">          
-                                    <input type="text" class="form-control" name="txtrak">
+                                  <div class="col-sm-3">          
+                                    <input type="text" class="form-control" name="txtrak" required>
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="baris">Baris:</label>
-                                  <div class="col-sm-4">          
-                                    <input type="text" class="form-control" name="txtbaris">
+                                  <div class="col-sm-3">          
+                                    <input type="text" class="form-control" name="txtbaris" required>
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="kolom">Kolom:</label>
-                                  <div class="col-sm-4">          
-                                    <input type="text" class="form-control" name="txtkolom">
+                                  <div class="col-sm-3">          
+                                    <input type="text" class="form-control" name="txtkolom" required>
                                   </div>
                                 </div>
                                 <div class="form-group">        
