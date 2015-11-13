@@ -123,7 +123,8 @@
                                         }                                                                                                                  
                                       echo form_dropdown('cbolok', $items, $select, 'class="form-control"');
                                     ?>   
-                                    <?php echo form_hidden('txtidlok', $lk['kd_lokasi']);?>                                
+                                    <?php echo form_hidden('txtidlok', $lk['kd_lokasi']);?>  
+                                    <?php echo form_hidden('txtnodok', $lk['no_dok']);?>                              
                                   </div>
                                 </div>                                                                                                                                                                                  
                                 <div class="form-group">

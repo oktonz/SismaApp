@@ -80,5 +80,11 @@ Class arsip_model extends CI_Model
 		$this->db->where('kd_lokasi', $kd);
 		$this->db->update('tbl_lokasi', $data);
 	}
+
+	function edit_dok($kd, $data)
+	{
+		$this->db->where('no_dok', $kd);
+		$this->db->update('tbl_dokumen', $data);
+	}
 }
 ?>

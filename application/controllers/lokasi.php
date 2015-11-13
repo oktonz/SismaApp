@@ -99,7 +99,12 @@ class Lokasi extends CI_Controller {
 			//'no_dok' => $this->input->post('txtnodok'),
 			'kd_map' => $this->input->post('cbolok'),
 		);
+		$upmap = array(
+			'kd_map' => $this->input->post('cbolok')
+		);
 		$this->arsip_model->edit_lokasi($kode, $lokasidok);
+		$kd = $this->input->post('txtnodok');
+		$this->arsip_model->edit_dok($kd, $upmap);
 		redirect('lokasi');
 	}
 
