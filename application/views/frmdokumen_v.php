@@ -234,6 +234,7 @@
                                 </div>
                                 <div class="form-group">        
                                   <div class="col-sm-offset-2 col-sm-10">
+                                    <button class="btn btn-primary" onClick="history.go(-1);return true;">Back</button>
                                     <button type="submit" class="btn btn-primary" name="cmdsimpan">Simpan</button>
                                   </div>
                                 </div>

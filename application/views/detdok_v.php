@@ -16,7 +16,7 @@
         ===
     -->
     <meta charset="utf-8">
-    <title>Informasi Data - Sistem Manajemen Arsip</title>
+    <title>Detail Dokumen - Sistem Manajemen Arsip</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
     <meta name="author" content="Muhammad Usman">
@@ -81,10 +81,10 @@
                         <a href="#">SisMA</a>
                     </li>
                     <li>
-                        <a href="#">Pengaturan</a>
+                        <a href="#">Arsip</a>
                     </li>
                     <li>
-                        <a href="#">Informasi Data</a>
+                        <a href="#">Detail Dokumen</a>
                     </li>
                 </ul>
             </div>
@@ -92,45 +92,83 @@
             <div class="row">
                 <div class="box col-md-12">
                     <div class="box-inner">
+                        <div class="box-header well" data-original-title="">
+                            <h2><i class="glyphicon glyphicon-star-empty"></i> Detail Dokumen</h2>
+
+                            <div class="box-icon">
+                                <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                                class="glyphicon glyphicon-chevron-up"></i></a>
+                                <a href="#" class="btn btn-close btn-round btn-default"><i
+                                class="glyphicon glyphicon-remove"></i></a>
+                            </div>
+                        </div>
                         <div class="box-content">
-                            <h4>Informasi Data Tersimpan</h4>
-                            <hr>
-                            <form class="form-horizontal" role="form">                                
-                                <div class="form-group">
-                                  <label class="control-label col-sm-2" for="jlh_file">Jumlah File : </label>
-                                  <div class="col-sm-8">
-                                    <label class="control-label" for="datajlhfile"><?php echo $jlh_file;?> File</label>
-                                  </div>
-                                </div> 
-                                <div class="form-group">
-                                  <label class="control-label col-sm-2" for="jlh_file">Jumlah Size : </label>
-                                  <div class="col-sm-8">
-                                    <label class="control-label" for="datajlhfile"><?php echo number_format($ukuran/1024,2);?> kbytes >> 
-                                        <?php echo number_format($ukuran/1024/1024,2);?> Mbytes 
-                                    </label>
-                                  </div>
-                                </div>    
-                                <div class="form-group">
-                                  <label class="control-label col-sm-2" for="kabupaten">Jumlah Kabupaten : </label>
-                                  <div class="col-sm-8">
-                                    <label class="control-label" for="datakabupaten"><?php echo $jlh_kab;?> Kabupaten</label>
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="control-label col-sm-2" for="aset">Jumlah Aset : </label>
-                                  <div class="col-sm-8">
-                                    <label class="control-label" for="dataaset"><?php echo $jlh_aset->unit;?> </label>
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="control-label col-sm-2" for="site">Jumlah Site : </label>
-                                  <div class="col-sm-8">
-                                    <label class="control-label" for="datasite"><?php //echo $ukuran;?> </label>
-                                  </div>
-                                </div>                                                              
-                            </form>
-                            <hr>
-                            <button onClick="history.go(-1);return true;" class="btn btn-primary">Back</button>                                
+                            <table>
+                                <?php foreach ($dokumen as $dk) { ?>                                
+                                <tr>
+                                    <td>Nomor Dokumen</td>
+                                    <td>:</td>
+                                    <td><?php echo $dk['no_dok'];?></td>
+                                </tr>   
+                                <tr>
+                                    <td>Nama Dokumen / Perihal</td>
+                                    <td>:</td>
+                                    <td><?php echo $dk['nm_dok'];?></td>
+                                </tr>
+                                <tr>
+                                    <td>Asal</td>
+                                    <td>:</td>
+                                    <td><?php echo $dk['asal'];?></td>
+                                </tr>
+                                <tr>
+                                    <td>Penerima</td>
+                                    <td>:</td>
+                                    <td><?php echo $dk['penerima'];?> Unit</td>
+                                </tr>
+                                <tr>
+                                    <td>Kategori</td>
+                                    <td>:</td>
+                                    <td><?php echo $dk['kategori'];?></td>
+                                </tr>
+                                <tr>
+                                    <td>Sifat</td>
+                                    <td>:</td>
+                                    <td><?php echo $dk['sifat'];?></td>
+                                </tr>
+                                <tr>
+                                    <td>Versi</td>
+                                    <td>:</td>
+                                    <td><?php echo $dk['versi'];?></td>
+                                </tr>
+                                <tr>
+                                    <td>Tanggal Dokumen</td>
+                                    <td>:</td>
+                                    <td><?php echo $dk['tgl_dok'];?></td>
+                                </tr>
+                                <tr>
+                                    <td>Tanggal Terima</td>
+                                    <td>:</td>
+                                    <td><?php echo $dk['tgl_terima'];?></td>
+                                </tr>
+                                <tr>
+                                    <td>Kondisi</td>
+                                    <td>:</td>
+                                    <td><?php echo $dk['kondisi'];?></td>
+                                </tr>
+                                <tr>
+                                    <td>Keterangan</td>
+                                    <td>:</td>
+                                    <td><?php echo $dk['keterangan'];?></td>
+                                </tr>
+                                 <tr>
+                                    <td>File</td>
+                                    <td>:</td>
+                                    <td><a href="<?php echo base_url().$dk['file_path'];?>" target=_blank>Link File</a></td>
+                                    <td></td>
+                                </tr>
+                                <?php } ?>
+                            </table>                            
+                            <button class="btn btn-primary" onClick="history.go(-1);return true;">Back</button>
                         </div>
                     </div>
                 </div>
@@ -140,6 +178,26 @@
     </div><!--/fluid-row-->
 
     <hr>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h3>Settings</h3>
+                </div>
+                <div class="modal-body">
+                    <p>Here settings can be configured...</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
+                    <a href="#" class="btn btn-primary" data-dismiss="modal">Save changes</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!--Footer-->
         <?php echo $footer;?>

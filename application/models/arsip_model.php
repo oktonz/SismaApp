@@ -35,6 +35,18 @@ Class arsip_model extends CI_Model
 		return $data;
 	}
 
+	function get_dokumen_d($kd_lok)
+	{
+		$this->db->select('*');
+		$this->db->from('tbl_dokumen');
+		$this->db->join('tbl_lokasi', 'tbl_dokumen.no_dok = tbl_lokasi.no_dok');
+		$this->db->join('tbl_maps', 'tbl_dokumen.kd_map = tbl_maps.kd_map');
+		$this->db->where('kd_lokasi', $kd_lok);
+		$this->db->order_by('tbl_lokasi.kd_lokasi');
+		$data = $this->db->get();
+		return $data;
+	}
+
 	function get_all_dokumen()
 	{
 		$this->db->select('*');

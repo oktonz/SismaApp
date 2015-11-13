@@ -41,29 +41,21 @@
                 </div>
             </div>
             <div>
-            <div class="box-inner">
-                
-                <div class="box-header well" data-original-title="">
-                    <h2>Pencarian Cepat</h2>
-                </div>
-                <div class="">
-                    <table class="" width="100%">
-                        <tr>
-                            <td colspan="2"><h5>Kata Kunci</h5></td>
-                        </tr>
-                        <form method="post" action="<?php echo base_url().'home/search';?>" name="frmsearch">
-                        <tr>
-                            <td colspan="2"><input type="text" class="form-control" placeholder="Dokumen" name="txtsearch"></td>
-                        </tr>
-                        <tr>
-                            <td><button class="btn btn-primary btn-sm" onclick="this.forms['frmsearch'].submit()"><i class="glyphicon glyphicon-search"></i> Cari</button></td>
-                            <td><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">Advanced</button></td>
-                        </tr>
-                        </form>
-                    </table>
-                </div>
-                
-            </div>
+              <div class="box-inner">
+                  <div class="box-header well">
+                      <h2>Pencarian Cepat</h2>
+                  </div>
+                  <div class="box-content">
+                    <form role="form" method="post" action="<?php echo base_url().'home/search';?>" name="frmsearch">
+                      <div class="form-group">
+                          <label for="pencarian">Kata Kunci</label>
+                          <input type="text" class="form-control" name="txtsearch" placeholder="Keyword">
+                      </div>
+                      <button class="btn btn-primary btn-sm" onclick="this.forms['frmsearch'].submit()"><i class="glyphicon glyphicon-search"></i> Cari</button>
+                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">Advanced</button>
+                    </form>                                                
+                  </div>                
+              </div>
             </div>
         </div>
         <!--/span-->

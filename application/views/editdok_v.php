@@ -16,7 +16,7 @@
         ===
     -->
     <meta charset="utf-8">
-    <title>Edit Users - Sistem Manajemen Arsip</title>
+    <title>Edit Arsip - Sistem Manajemen Arsip</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
     <meta name="author" content="Muhammad Usman">
@@ -78,16 +78,13 @@
             <div>
                 <ul class="breadcrumb">
                     <li>
-                        <a href="#">SisMA</a>
+                        <a href="#">Home</a>
                     </li>
                     <li>
-                        <a href="#">Pengaturan</a>
+                        <a href="#">Daftar Arsip</a>
                     </li>
                     <li>
-                        <a href="#">Daftar Users</a>
-                    </li>
-                    <li>
-                        <a href="#">Edit Users</a>
+                        <a href="#">Edit Dokumen</a>
                     </li>
                 </ul>
             </div>
@@ -96,7 +93,7 @@
                 <div class="box col-md-12">
                     <div class="box-inner">
                         <div class="box-header well" data-original-title="">
-                            <h2><i class="glyphicon glyphicon-star-empty"></i> Form Edit Users</h2>
+                            <h2><i class="glyphicon glyphicon-star-empty"></i> Form Edit Arsip</h2>
 
                             <div class="box-icon">
                                 <a href="#" class="btn btn-minimize btn-round btn-default"><i
@@ -105,96 +102,89 @@
                                         class="glyphicon glyphicon-remove"></i></a>
                             </div>
                         </div>
-                        <div class="box-content">
-                            <?php foreach ($user as $u) { ?>                            
-                            <form class="form-horizontal" role="form" method="post" action="<?php echo base_url().'users/do_edit_users';?>">
-                                <input type="hidden" name="hid" value="<?php echo $u['id'];?>">
+                        <div class="box-content">                      
+                            <form class="form-horizontal" role="form" method="post" action="<?php //echo base_url().'arsip/do_edit_arsip';?>">
+                              <?php foreach ($dokumen as $dk) {?>                            
                                 <div class="form-group">
-                                  <label class="control-label col-sm-2" for="indexarsip">Nama Lengkap:</label>
-                                  <div class="col-sm-4">
-                                    <input type="text" class="form-control" name="txtnama" value="<?php echo $u['nama'];?>">
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="control-label col-sm-2" for="provinsi">UserName:</label>
+                                  <label class="control-label col-sm-2" for="nodok">Nomor Dokumen:</label>
                                   <div class="col-sm-4">          
-                                    <input type="text" class="form-control" name="txtusername" value="<?php echo $u['username'];?>">
-                                  </div>
-                                </div>
-                                <!--
-                                <div class="form-group">
-                                  <label class="control-label col-sm-2" for="kabupaten">Password:</label>
-                                  <div class="col-sm-4">          
-                                    <input type="password" class="form-control" name="txtpassword" value="<?php echo $u['password'];?>">
-                                  </div>
-                                </div>
-                                -->
-                                <div class="form-group">
-                                  <label class="control-label col-sm-2" for="kodepkrj">Alamat:</label>
-                                  <div class="col-sm-4">          
-                                    <textarea class="form-control" rows="4" name="txtalamat"><?php echo $u['alamat'];?></textarea>
+                                    <input type="text" class="form-control" name="txtnodok" value="<?php echo $dk['no_dok'];?>">
                                   </div>
                                 </div>
                                 <div class="form-group">
-                                  <label class="control-label col-sm-2" for="kodepkrj">Email:</label>
-                                  <div class="col-sm-4">          
-                                    <input type="text" class="form-control" name="txtemail" value="<?php echo $u['email'];?>">
+                                  <label class="control-label col-sm-2" for="perihal">Perihal:</label>
+                                  <div class="col-sm-8">          
+                                    <input type="text" class="form-control" name="txtperihal" value="<?php echo $dk['nm_dok'];?>">
                                   </div>
                                 </div>
                                 <div class="form-group">
-                                  <label class="control-label col-sm-2" for="namapkrj">No Telp/HP:</label>
-                                  <div class="col-sm-4">          
-                                    <input type="text" class="form-control" name="txtnohp" value="<?php echo $u['nohp'];?>">
+                                  <label class="control-label col-sm-2" for="asaldok">Asal Dokumen:</label>
+                                  <div class="col-sm-5">          
+                                    <input type="text" class="form-control" name="txtasaldok" value="<?php echo $dk['asal'];?>">
                                   </div>
                                 </div>
                                 <div class="form-group">
-                                  <label class="control-label col-sm-2" for="tahun">Tempat Lahir:</label>
+                                  <label class="control-label col-sm-2" for="penerimadok">Penerima Dokumen:</label>
+                                  <div class="col-sm-5">          
+                                    <input type="text" class="form-control" name="txtpenerimadok" value="<?php echo $dk['penerima'];?>">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="sifat">Sifat Kepentingan:</label>
                                   <div class="col-sm-3">          
-                                    <input type="text" class="form-control" name="txttempatlahir" value="<?php echo $u['tpt_lahir'];?>">
+                                    <input type="text" class="form-control" name="txtsifatkep" value="<?php echo $dk['sifat'];?>">
                                   </div>
                                 </div>
                                 <div class="form-group">
-                                  <label class="control-label col-sm-2" for="tahun">Tanggal Lahir:</label>
-                                  <div class="col-sm-3">          
-                                    <input type="date" class="form-control" name="dtptgllahir" value="<?php echo $u['tgl_lahir'];?>">
+                                  <label class="control-label col-sm-2" for="kategori">Kategori:</label>
+                                  <div class="col-sm-4">          
+                                    <input type="text" class="form-control" name="txtkategori" value="<?php echo $dk['kategori'];?>">
                                   </div>
-                                </div>                                
+                                </div>
                                 <div class="form-group">
-                                  <label class="control-label col-sm-2" for="kecamatan">Role:</label>
-                                  <div class="col-sm-2">
-                                      <select class="form-control" id="sel" onchange="run()">
-                                        <option>Pilih Role</option>
-                                        <?php if ($u['role'] == "Super Admin")
-                                        { ?>
-                                            <option selected="selected">Super Admin</option>
-                                            <option>Admin</option>
-                                            <option>Viewer</option>  
-                                        <?php } 
-                                        elseif ($u['role'] == "Admin") 
-                                        { ?>
-                                            <option>Super Admin</option>
-                                            <option selected="selected">Admin</option>
-                                            <option>Viewer</option>  
-                                        <?php }
-                                        elseif ($u['role'] == "Viewer")
-                                        { ?>
-                                            <option>Super Admin</option>
-                                            <option>Admin</option>
-                                            <option selected="selected">Viewer</option>  
-                                        <?php }
-                                        ?>                                   
-                                      </select>
-                                      <input type="hidden" name="cborole" id="hrole">
+                                  <label class="control-label col-sm-2" for="versi">Versi:</label>
+                                  <div class="col-sm-4">          
+                                    <input type="text" class="form-control" name="txtversi" value="<?php echo $dk['versi'];?>">
                                   </div>
-                                </div>                                                                                                                    
+                                </div>
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="tgldok">Tanggal Dokumen:</label>
+                                  <div class="col-sm-4">          
+                                    <input type="date" class="form-control" name="dtptgldok" value="<?php echo $dk['tgl_dok'];?>">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="tglterima">Tanggal Terima:</label>
+                                  <div class="col-sm-4">          
+                                    <input type="date" class="form-control" name="dtptglterima" value="<?php echo $dk['tgl_terima'];?>">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="kondisidok">Kondisi Dokumen:</label>
+                                  <div class="col-sm-4">          
+                                    <input type="text" class="form-control" name="txtkondisidok" value="<?php echo $dk['kondisi'];?>">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="ket">Keterangan:</label>
+                                  <div class="col-sm-6">          
+                                    <textarea class="form-control" rows="5" name="txtket"><?php echo $dk['keterangan'];?></textarea>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="filedok">File Dokumen:</label>
+                                  <div class="col-sm-4">          
+                                    <input type="file" class="form-control" name="userfile">
+                                  </div>
+                                </div>                                                                                                                       
                                 <div class="form-group">        
                                   <div class="col-sm-offset-2 col-sm-10">
                                     <button class="btn btn-primary" onClick="history.go(-1);return true;">Back</button>
                                     <button type="submit" class="btn btn-primary" name="cmdsimpan">Simpan</button>
                                   </div>
-                                </div>
-                          </form>
-                          <?php } ?>
+                                </div>    
+                                <?php } ?>                           
+                          </form>                          
                         </div>
                     </div>
                 </div>
@@ -204,6 +194,26 @@
     </div><!--/fluid-row-->
 
     <hr>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h3>Settings</h3>
+                </div>
+                <div class="modal-body">
+                    <p>Here settings can be configured...</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
+                    <a href="#" class="btn btn-primary" data-dismiss="modal">Save changes</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer class="row">
         <p class="col-md-9 col-sm-9 col-xs-12 copyright">&copy; <a href="http://usman.it" target="_blank">Muhammad
@@ -216,9 +226,13 @@
 </div><!--/.fluid-container-->
 
 <script>
-  function run()
+  function run1()
   {
-    document.getElementById("hrole").value = document.getElementById("sel").value;
+    document.getElementById("hindx").value = document.getElementById("sel1").value;
+  }
+  function run2()
+  {
+    document.getElementById("hunit").value = document.getElementById("sel2").value;
   }
 </script>
 

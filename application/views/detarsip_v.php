@@ -176,10 +176,10 @@
                                     <td id="tengah"><?php echo $doks['penerima'];?></td>
                                     <td id="tengah"><a href="<?php echo base_url().$doks['file_path'];?>" target="_blank">File</a></td>
                                     <td id="tengah">
-                                        <a class="btn btn-success" href="<?php //echo base_url().'arsip/detail_arsip/'.$arsips['kd_pekerjaan'];?>">
+                                        <a class="btn btn-success" href="<?php echo base_url().'arsip/view_dok/'.$doks['kd_lokasi'];?>">
                                             <i class="glyphicon glyphicon-zoom-in icon-white"></i>                                    
                                         </a>
-                                        <a class="btn btn-info" href="<?php //echo base_url().'arsip/edit_arsip/'.$arsips['kd_pekerjaan'];?>">
+                                        <a class="btn btn-info" href="<?php echo base_url().'arsip/edit_dok/'.$doks['kd_lokasi'];?>">
                                             <i class="glyphicon glyphicon-edit icon-white"></i>
                                         </a>
                                         <a class="btn btn-danger" href="<?php echo base_url().'lokasi/delete_lokasi/'.$doks['kd_lokasi'];?>"

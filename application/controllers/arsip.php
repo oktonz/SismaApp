@@ -111,6 +111,46 @@ class Arsip extends CI_Controller {
 		redirect('arsip');
 	}
 
+	public function view_dok($kd)
+	{
+		if($this->session->userdata('logged_in'))
+		{
+			$dokumen = $this->arsip_model->get_dokumen_d($kd);
+			$session_data = $this->session->userdata('logged_in');
+			$komponen = array(
+				'topbar' => $this->html_topbar(),
+				'navigasi' => $this->html_navigasi(),
+				'footer' => $this->html_footer(),		
+				'dokumen' => $dokumen->result_array()		
+				);
+			$this->load->view('detdok_v', $komponen);
+		}
+		else
+		{
+			redirect('login');
+		}
+	}
+
+	public function edit_dok($kd)
+	{
+		if($this->session->userdata('logged_in'))
+		{				
+			$dokumen = $this->arsip_model->get_dokumen_d($kd);
+			$session_data = $this->session->userdata('logged_in');
+			$komponen = array(
+				'topbar' => $this->html_topbar(),
+				'navigasi' => $this->html_navigasi(),
+				'footer' => $this->html_footer(),
+				'dokumen' => $dokumen->result_array()							
+				);
+			$this->load->view('editdok_v', $komponen);
+		}
+		else
+		{
+			redirect('login');
+		}
+	}
+
 	public function html_topbar()
 	{
 		$session_data = $this->session->userdata('logged_in');

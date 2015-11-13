@@ -184,14 +184,15 @@
                                   <div class="col-sm-6">          
                                     <textarea class="form-control" rows="5" name="txtket"><?php echo $ars['keterangan'];?></textarea>
                                   </div>
-                                </div>                                                                                       
+                                </div>                                                                                                                       
                                 <div class="form-group">        
                                   <div class="col-sm-offset-2 col-sm-10">
+                                    <button class="btn btn-primary" onClick="history.go(-1);return true;">Back</button>
                                     <button type="submit" class="btn btn-primary" name="cmdsimpan">Simpan</button>
                                   </div>
                                 </div>    
                                 <?php } ?>                           
-                          </form>
+                          </form>                          
                         </div>
                     </div>
                 </div>
