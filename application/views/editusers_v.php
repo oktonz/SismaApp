@@ -162,29 +162,15 @@
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="kecamatan">Role:</label>
                                   <div class="col-sm-2">
-                                      <select class="form-control" id="sel" onchange="run()">
-                                        <option>Pilih Role</option>
-                                        <?php if ($u['role'] == "Super Admin")
-                                        { ?>
-                                            <option selected="selected">Super Admin</option>
-                                            <option>Admin</option>
-                                            <option>Viewer</option>  
-                                        <?php } 
-                                        elseif ($u['role'] == "Admin") 
-                                        { ?>
-                                            <option>Super Admin</option>
-                                            <option selected="selected">Admin</option>
-                                            <option>Viewer</option>  
-                                        <?php }
-                                        elseif ($u['role'] == "Viewer")
-                                        { ?>
-                                            <option>Super Admin</option>
-                                            <option>Admin</option>
-                                            <option selected="selected">Viewer</option>  
-                                        <?php }
-                                        ?>                                   
-                                      </select>
-                                      <input type="hidden" name="cborole" id="hrole">
+                                    <?php
+                                        $select = $u['role'];                                                                              
+                                        $items = array(
+                                            'Super Admin' => 'Super Admin',
+                                            'Admin' => 'Admin',
+                                            'Viewer' => 'Viewer'
+                                        );                                                                                                                                                          
+                                      echo form_dropdown('cborole', $items, $select, 'class="form-control"');
+                                    ?>                                      
                                   </div>
                                 </div>                                                                                                                    
                                 <div class="form-group">        

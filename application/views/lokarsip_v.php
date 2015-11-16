@@ -16,7 +16,7 @@
         ===
     -->
     <meta charset="utf-8">
-    <title>Lokasi Arsip - Sistem Manajemen Arsip</title>
+    <title>Lokasi Dokumen - Sistem Manajemen Arsip</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
     <meta name="author" content="Muhammad Usman">
@@ -81,7 +81,7 @@
                         <a href="#">SisMA</a>
                     </li>
                     <li>
-                        <a href="#">Lokasi Arsip</a>
+                        <a href="#">Lokasi Dokumen</a>
                     </li>
                 </ul>
             </div>
@@ -90,7 +90,7 @@
                 <div class="box col-md-12">
                     <div class="box-inner">
                         <div class="box-header well" data-original-title="">
-                            <h2><i class="glyphicon glyphicon-star-empty"></i> Lokasi Arsip</h2>
+                            <h2><i class="glyphicon glyphicon-star-empty"></i> Lokasi Dokumen</h2>
 
                             <div class="box-icon">
                                 <a href="#" class="btn btn-minimize btn-round btn-default"><i
@@ -103,35 +103,35 @@
                             <table class="table table-striped table-bordered bootstrap-datatable datatable responsive">
                                 <thead>
                                 <tr>
-                                    <th>Nomor</th>
-                                    <th>Lokasi</th>
-                                    <th>Gedung</th>
-                                    <th>Lantai</th>
-                                    <th>Rak</th>
-                                    <th>Baris</th>
-                                    <th>Kolom</th>
-                                    <th>No Dokumen</th>
-                                    <th>Perihal</th>            
-                                    <th>Data File</th>
-                                    <th width="15%">Action</th>
+                                    <th id="tengah">Nomor</th>
+                                    <th id="tengah">Lokasi</th>
+                                    <th id="tengah">Gedung</th>
+                                    <th id="tengah">Lantai</th>
+                                    <th id="tengah">Rak</th>
+                                    <th id="tengah">Baris</th>
+                                    <th id="tengah">Kolom</th>
+                                    <th id="tengah">No Dokumen</th>
+                                    <th id="tengah">Perihal</th>            
+                                    <th id="tengah">Data File</th>
+                                    <th id="tengah" width="15%">Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                     <?php foreach ($lokasi as $loks) { ?>
                                     <tr>
-                                        <td class="center"><?php echo $loks['kd_lokasi'];?></td>
-                                        <td class="center"><?php echo $loks['lokasi'];?></td>
-                                        <td class="center"><?php echo $loks['gedung'];?></td>
-                                        <td class="center"><?php echo $loks['lantai'];?></td>
-                                        <td class="center"><?php echo $loks['rak'];?></td>
-                                        <td class="center"><?php echo $loks['baris'];?></td>
-                                        <td class="center"><?php echo $loks['kolom'];?></td>
-                                        <td class="center"><?php echo $loks['no_dok'];?></td>
-                                        <td class="center"><?php echo $loks['nm_dok'];?></td>
-                                        <td class="center">
+                                        <td id="tengah"><?php echo $loks['kd_lokasi'];?></td>
+                                        <td id="tengah"><?php echo $loks['lokasi'];?></td>
+                                        <td id="tengah"><?php echo $loks['gedung'];?></td>
+                                        <td id="tengah"><?php echo $loks['lantai'];?></td>
+                                        <td id="tengah"><?php echo $loks['rak'];?></td>
+                                        <td id="tengah"><?php echo $loks['baris'];?></td>
+                                        <td id="tengah"><?php echo $loks['kolom'];?></td>
+                                        <td id="tengah"><?php echo $loks['no_dok'];?></td>
+                                        <td id="tengah"><?php echo $loks['nm_dok'];?></td>
+                                        <td id="tengah">
                                             <a href="<?php echo base_url().$loks['file_path'];?>" target="_blank">File</a>
                                         </td>
-                                        <td class="center">
+                                        <td id="tengah">
                                             <a class="btn btn-success" href="<?php echo base_url().'lokasi/det_lokasi/'.$loks['kd_lokasi'];?>">
                                                 <i class="glyphicon glyphicon-zoom-in icon-white"></i>
                                             </a>

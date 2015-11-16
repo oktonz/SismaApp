@@ -75,6 +75,37 @@ class Home extends CI_Controller {
 		}
 	}
 
+	public function adv_search()
+	{
+		if($this->session->userdata('logged_in'))
+		{
+			$match = array(
+				'match1' => $this->input->post('txtidxarsip'),
+				'match2' => $this->input->post('txtnmpekerjaan'),
+				'match3' => $this->input->post('txttahun'),
+				'match4' => $this->input->post('txtprovinsi'),
+				'match5' => $this->input->post('txtnodok'),
+				'match6' => $this->input->post('txtperihal'),
+				'match7' => $this->input->post('txtasaldok'),
+				'match8' => $this->input->post('txtlokasi'),
+				'match9' => $this->input->post('txtgedung'),
+			);			
+			$session_data = $this->session->userdata('logged_in');
+			$cari = $this->search_model->get_advsearch($match);
+			$komponen = array(
+				'topbar' => $this->html_topbar(),
+				'navigasi' => $this->html_navigasi(),
+				'footer' => $this->html_footer(),
+				'hasil' => $cari->result_array(),
+				);
+			$this->load->view('search_v', $komponen);
+		}
+		else
+		{
+			redirect('login');
+		}
+	}
+
 	public function test()
 	{
 		$this->load->view('file_view');

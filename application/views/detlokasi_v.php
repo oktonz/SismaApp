@@ -143,28 +143,28 @@
                             <table class="table table-striped table-bordered responsive">
                                 <thead>
                                 <tr>
-                                    <th>No Dokumen</th>
-                                    <th>Perihal</th>
-                                    <th>kategori</th>
-                                    <th>Tanggal</th>
-                                    <th>Asal</th>
-                                    <th>Penerima</th>
-                                    <th>Versi</th>
-                                    <th>Tanggal Terima</th>            
-                                    <th>Data File</th>                        
+                                    <th id="tengah">No Dokumen</th>
+                                    <th id="tengah">Perihal</th>
+                                    <th id="tengah">kategori</th>
+                                    <th id="tengah">Tanggal</th>
+                                    <th id="tengah">Asal</th>
+                                    <th id="tengah">Penerima</th>
+                                    <th id="tengah">Versi</th>
+                                    <th id="tengah">Tanggal Terima</th>            
+                                    <th id="tengah">Data File</th>                        
                                 </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="center"><?php echo $detl['no_dok'];?></td>
-                                        <td class="center"><?php echo $detl['nm_dok'];?></td>
-                                        <td class="center"><?php echo $detl['kategori'];?></td>
-                                        <td class="center"><?php echo $detl['tgl_dok'];?></td>
-                                        <td class="center"><?php echo $detl['asal'];?></td>
-                                        <td class="center"><?php echo $detl['penerima'];?></td>
-                                        <td class="center"><?php echo $detl['versi'];?></td>
-                                        <td class="center"><?php echo $detl['tgl_terima'];?></td>
-                                        <td class="center">
+                                        <td id="tengah"><?php echo $detl['no_dok'];?></td>
+                                        <td id="tengah"><?php echo $detl['nm_dok'];?></td>
+                                        <td id="tengah"><?php echo $detl['kategori'];?></td>
+                                        <td id="tengah"><?php echo $detl['tgl_dok'];?></td>
+                                        <td id="tengah"><?php echo $detl['asal'];?></td>
+                                        <td id="tengah"><?php echo $detl['penerima'];?></td>
+                                        <td id="tengah"><?php echo $detl['versi'];?></td>
+                                        <td id="tengah"><?php echo $detl['tgl_terima'];?></td>
+                                        <td id="tengah">
                                             <a href="<?php echo base_url().$detl['file_path'];?>" target="_blank">File Dok</a>
                                         </td>
                                     </tr>

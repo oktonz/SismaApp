@@ -72,59 +72,59 @@
                         <h3>Pencarian Lanjut</h3>
                     </div>
                     <div class="modal-body">
-                        <form method="post" action="#1" class="form-horizontal" role="form">
+                        <form method="post" action="<?php echo base_url().'home/adv_search';?>" class="form-horizontal" role="form">
                             <div class="form-group">
                               <label class="control-label col-sm-4" for="email">Index Arsip:</label>
                               <div class="col-sm-4">
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" name="txtidxarsip">
                               </div>
                             </div>
                             <div class="form-group">
                               <label class="control-label col-sm-4" for="pwd">Nama Pekerjaan:</label>
                               <div class="col-sm-6">          
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" name="txtnmpekerjaan">
                               </div>
                             </div>
                             <div class="form-group">
                               <label class="control-label col-sm-4" for="pwd">Tahun</label>
                               <div class="col-sm-6">          
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" name="txttahun">
                               </div>
                             </div>
                             <div class="form-group">
                               <label class="control-label col-sm-4" for="pwd">Provinsi</label>
                               <div class="col-sm-6">          
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" name="txtprovinsi">
                               </div>
                             </div>
                             <div class="form-group">
                               <label class="control-label col-sm-4" for="pwd">Nomor Dokumen</label>
                               <div class="col-sm-8">          
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" name="txtnodok">
                               </div>
                             </div>
                             <div class="form-group">
                               <label class="control-label col-sm-4" for="pwd">Perihal</label>
                               <div class="col-sm-6">          
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" name="txtperihal">
                               </div>
                             </div>
                             <div class="form-group">
                               <label class="control-label col-sm-4" for="pwd">Asal Dokumen</label>
                               <div class="col-sm-6">          
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" name="txtasaldok">
                               </div>
                             </div>
                             <div class="form-group">
                               <label class="control-label col-sm-4" for="pwd">Lokasi Dokumen</label>
                               <div class="col-sm-6">          
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" name="txtlokasi">
                               </div>
                             </div>
                             <div class="form-group">
                               <label class="control-label col-sm-4" for="pwd">Gedung</label>
                               <div class="col-sm-6">          
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" name="txtgedung">
                               </div>
                             </div>
                     </div>

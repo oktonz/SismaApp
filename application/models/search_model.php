@@ -37,13 +37,36 @@ Class Search_model extends CI_Model
 		$this->db->or_like('judul', $match);
 		$this->db->or_like('gedung', $match);
 		$this->db->or_like('lantai', $match);
+		$this->db->or_like('tbl_maps.lokasi', $match);
 		$query = $this->db->get();
 		return $query;
 	}
 
-	function get_advsearch()
+	function get_advsearch($match)
 	{
-		
+		$sel = array('tbl_index.index_arsip', 'judul', 'tbl_pekerjaan.kd_pekerjaan',
+					 'nm_pekerjaan', 'unit', 'tahun', 'provinsi', 'kabupaten', 'kecamatan',
+					 'desa', 'status', 'tbl_dokumen.no_dok', 'nm_dok', 'asal', 'penerima',
+					 'kategori', 'sifat', 'versi', 'tgl_dok', 'kondisi', 'gedung', 'lantai',
+					 'rak', 'baris', 'kolom', 'lokasi', 'kd_lokasi'
+					);
+		$this->db->select($sel);
+		$this->db->from('tbl_pekerjaan');
+		$this->db->join('tbl_dokumen', 'tbl_pekerjaan.kd_pekerjaan = tbl_dokumen.kd_pekerjaan', 'left');
+		$this->db->join('tbl_lokasi', 'tbl_dokumen.no_dok = tbl_lokasi.no_dok', 'left');
+		$this->db->join('tbl_index', 'tbl_pekerjaan.index_arsip = tbl_index.index_arsip', 'left');
+		$this->db->join('tbl_maps', 'tbl_lokasi.kd_map = tbl_maps.kd_map', 'left');
+		$this->db->like('tbl_index.index_arsip', $match['match1']);
+		$this->db->like('tbl_pekerjaan.nm_pekerjaan', $match['match2']);
+		$this->db->like('tbl_pekerjaan.tahun', $match['match3']);
+		$this->db->like('tbl_pekerjaan.provinsi', $match['match4']);
+		$this->db->like('tbl_dokumen.no_dok', $match['match5']);
+		$this->db->like('tbl_dokumen.nm_dok', $match['match6']);
+		$this->db->like('tbl_dokumen.asal', $match['match7']);
+		$this->db->like('tbl_maps.lokasi', $match['match8']);
+		$this->db->like('tbl_lokasi.gedung', $match['match9']);
+		$query = $this->db->get();
+		return $query;
 	}
 
 	function get_dok_maps($lokasi)

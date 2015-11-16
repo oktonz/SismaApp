@@ -1,5 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+//Design : Oktonius (085245971980)
 Class arsip_model extends CI_Model
 {
 	function get_all_arsip()
