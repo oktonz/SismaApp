@@ -151,6 +151,50 @@ class Arsip extends CI_Controller {
 		}
 	}
 
+	public function do_edit_dok()
+	{
+		$dokurl = $this->input->post('txturlfile');
+		
+		if ($_FILES['userfile']['size'] != 0)
+		{		   
+			unlink($dokurl);
+			$nmdok = $this->input->post('txtperihal');
+			$config = array(
+				'upload_path' => "./assets/dokumen",
+				'allowed_types' => "pdf",
+				'overwrite' => TRUE,
+				'max_size' => "2048000", // Can be set to particular file size , here it is 2 MB(2048 Kb)
+				//'max_height' => "1500",
+				//'max_width' => "1500",
+				'file_name' => $nmdok.date('d').date('i'), 
+			);
+			$this->load->library('upload', $config);
+			$this->upload->do_upload();
+			$res = $this->upload->data();
+			$dokurl = "assets/dokumen/".$res['file_name'];
+		}
+		
+		$kd = $this->input->post('txtkdlok');
+		$kode = $this->input->post('txtnodok');
+		$dat = array(
+			'tbl_lokasi.no_dok' => $kode,
+			'tbl_dokumen.no_dok' => $kode,
+			'nm_dok' => $this->input->post('txtperihal'),
+			'asal' => $this->input->post('txtasaldok'),
+			'penerima' => $this->input->post('txtpenerimadok'),
+			'kategori' => $this->input->post('txtkategori'),
+			'sifat' => $this->input->post('txtsifatkep'),
+			'versi' => $this->input->post('txtversi'),
+			'tgl_dok' => $this->input->post('dtptgldok'),
+			'tgl_terima' => $this->input->post('dtptglterima'),
+			'kondisi' => $this->input->post('txtkondisidok'),
+			'keterangan' => $this->input->post('txtket'),
+			'tbl_lokasi.file_path' => $dokurl
+		);
+		$this->arsip_model->edit_dok($kd, $dat);		
+		redirect('arsip');
+	}
+
 	public function html_topbar()
 	{
 		$session_data = $this->session->userdata('logged_in');

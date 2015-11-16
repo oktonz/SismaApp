@@ -95,8 +95,8 @@ Class arsip_model extends CI_Model
 
 	function edit_dok($kd, $data)
 	{
-		$this->db->where('no_dok', $kd);
-		$this->db->update('tbl_dokumen', $data);
+		$this->db->where('tbl_lokasi.kd_lokasi', $kd);
+		$this->db->update('tbl_dokumen join tbl_lokasi on tbl_dokumen.no_dok = tbl_lokasi.no_dok', $data);
 	}
 }
 ?>

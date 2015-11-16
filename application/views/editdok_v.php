@@ -16,7 +16,7 @@
         ===
     -->
     <meta charset="utf-8">
-    <title>Edit Arsip - Sistem Manajemen Arsip</title>
+    <title>Edit Dokumen - Sistem Manajemen Arsip</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
     <meta name="author" content="Muhammad Usman">
@@ -93,7 +93,7 @@
                 <div class="box col-md-12">
                     <div class="box-inner">
                         <div class="box-header well" data-original-title="">
-                            <h2><i class="glyphicon glyphicon-star-empty"></i> Form Edit Arsip</h2>
+                            <h2><i class="glyphicon glyphicon-star-empty"></i> Form Edit dokumen</h2>
 
                             <div class="box-icon">
                                 <a href="#" class="btn btn-minimize btn-round btn-default"><i
@@ -103,8 +103,9 @@
                             </div>
                         </div>
                         <div class="box-content">                      
-                            <form class="form-horizontal" role="form" method="post" action="<?php //echo base_url().'arsip/do_edit_arsip';?>">
-                              <?php foreach ($dokumen as $dk) {?>                            
+                            <form class="form-horizontal" role="form" method="post" action="<?php echo base_url().'arsip/do_edit_dok';?>" enctype="multipart/form-data">
+                              <?php foreach ($dokumen as $dk) {?>    
+                              <input type="hidden" name="txtkdlok" value="<?php echo $dk['kd_lokasi'];?>">                        
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="nodok">Nomor Dokumen:</label>
                                   <div class="col-sm-4">          
@@ -176,6 +177,7 @@
                                   <div class="col-sm-4">          
                                     <input type="file" class="form-control" name="userfile">
                                   </div>
+                                  <input type="hidden" name="txturlfile" value="<?php echo $dk['file_path'];?>">
                                 </div>                                                                                                                       
                                 <div class="form-group">        
                                   <div class="col-sm-offset-2 col-sm-10">
