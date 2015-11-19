@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2015 at 04:48 AM
+-- Generation Time: Nov 19, 2015 at 05:50 AM
 -- Server version: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `tbl_maps` (
 CREATE TABLE IF NOT EXISTS `tbl_pekerjaan` (
   `kd_pekerjaan` varchar(25) NOT NULL,
   `nm_pekerjaan` varchar(200) NOT NULL,
-  `unit` varchar(2) DEFAULT NULL,
+  `unit` int(11) DEFAULT NULL,
   `tahun` year(4) NOT NULL,
   `provinsi` varchar(50) DEFAULT NULL,
   `kabupaten` varchar(50) DEFAULT NULL,

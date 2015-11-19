@@ -97,13 +97,13 @@
                             <hr>
                             <form class="form-horizontal" role="form">                                
                                 <div class="form-group">
-                                  <label class="control-label col-sm-2" for="jlh_file">Jumlah File : </label>
+                                  <label class="control-label col-sm-3" for="jlh_file">Jumlah File : </label>
                                   <div class="col-sm-8">
                                     <label class="control-label" for="datajlhfile"><?php echo $jlh_file;?> File</label>
                                   </div>
                                 </div> 
                                 <div class="form-group">
-                                  <label class="control-label col-sm-2" for="jlh_file">Jumlah Size : </label>
+                                  <label class="control-label col-sm-3" for="jlh_file">Jumlah Size : </label>
                                   <div class="col-sm-8">
                                     <label class="control-label" for="datajlhfile"><?php echo number_format($ukuran/1024,2);?> kbytes >> 
                                         <?php echo number_format($ukuran/1024/1024,2);?> Mbytes 
@@ -111,23 +111,25 @@
                                   </div>
                                 </div>    
                                 <div class="form-group">
-                                  <label class="control-label col-sm-2" for="kabupaten">Jumlah Kabupaten : </label>
+                                  <label class="control-label col-sm-3" for="kabupaten">Jumlah Kabupaten/Lokasi : </label>
                                   <div class="col-sm-8">
-                                    <label class="control-label" for="datakabupaten"><?php echo $jlh_kab;?> Kabupaten</label>
+                                    <label class="control-label" for="datakabupaten"><?php echo $jlh_kab;?></label>
                                   </div>
                                 </div>
                                 <div class="form-group">
-                                  <label class="control-label col-sm-2" for="aset">Jumlah Aset : </label>
+                                  <label class="control-label col-sm-3" for="aset">Jumlah Aset : </label>
                                   <div class="col-sm-8">
                                     <label class="control-label" for="dataaset"><?php echo $jlh_aset->unit;?> </label>
                                   </div>
                                 </div>
+                                <!--
                                 <div class="form-group">
                                   <label class="control-label col-sm-2" for="site">Jumlah Site : </label>
                                   <div class="col-sm-8">
                                     <label class="control-label" for="datasite"><?php //echo $ukuran;?> </label>
                                   </div>
-                                </div>                                                              
+                                </div> 
+                                -->                                                             
                             </form>
                             <hr>
                             <button onClick="history.go(-1);return true;" class="btn btn-primary">Back</button>                                

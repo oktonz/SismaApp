@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2015 at 04:43 AM
+-- Generation Time: Nov 19, 2015 at 05:49 AM
 -- Server version: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -47,8 +47,9 @@ CREATE TABLE IF NOT EXISTS `tbl_dokumen` (
 --
 
 INSERT INTO `tbl_dokumen` (`no_dok`, `nm_dok`, `asal`, `penerima`, `kategori`, `sifat`, `versi`, `tgl_dok`, `tgl_terima`, `kondisi`, `keterangan`, `kd_pekerjaan`, `kd_map`) VALUES
-('BIO.01/12/15.SSA', 'Testing', 'Camat', 'ebk', 'Surat permintaan', 'tidak penting', '1', '2015-11-01', '2015-11-11', 'baik', '', 'PKRJ-00011', 2),
-('QWE.12.12/21QW', 'Dokumen Test', 'test1', 'test2', 'surat', 'penting', '1', '2015-11-05', '2015-11-05', 'Baik', 'tidak ada', 'PKRJ-00004', 9);
+('03.K/91.04/P18-F3/PPK-F/DJE/2011', 'Kontrak Kerja', 'Bupati', 'Direktorat EBK', 'Dokumen Kontrak', 'Penting', '1', '2015-11-01', '2015-11-02', 'baik', 'Belum ada usulan dari bupati setempat', 'PKJ-061115~0001', 13),
+('BIOGAS12312/12/51', 'Surat Gas', 'ajhgdakj', 'jhaskjdh', 'kjashkjd', 'kjhaskjdh', '1', '2014-12-31', '2015-12-31', 'asda', 'asjhdk', 'PKJ-121115~0002', 11),
+('QQQ.12/12/121', 'tetetetete', 'tetetetete', 'etettetete', 'etetet', 'etettete', '1', '2015-12-31', '2014-12-31', 'rwrwrwrw', 'rwrwrwrwr', 'PKJ-161115~0005', 12);
 
 -- --------------------------------------------------------
 
@@ -67,9 +68,8 @@ CREATE TABLE IF NOT EXISTS `tbl_index` (
 --
 
 INSERT INTO `tbl_index` (`index_arsip`, `judul`, `tgl_input`) VALUES
-('IDX-00001', 'PLTMH', '2015-10-01'),
-('IDX-00002', 'Produktif', '2015-10-30'),
-('xxxxxxxxxxxxxxxxxxeewerqwer', 'qwerqwerqwer', '2015-11-17');
+('IDX-051115~0001', 'Produktif', '2015-11-01'),
+('IDX-121115~0002', 'Test', '2015-11-03');
 
 -- --------------------------------------------------------
 
@@ -87,15 +87,16 @@ CREATE TABLE IF NOT EXISTS `tbl_lokasi` (
   `file_path` varchar(150) DEFAULT NULL,
   `no_dok` varchar(100) NOT NULL,
   `kd_map` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_lokasi`
 --
 
 INSERT INTO `tbl_lokasi` (`kd_lokasi`, `gedung`, `lantai`, `rak`, `baris`, `kolom`, `file_path`, `no_dok`, `kd_map`) VALUES
-(3, 'qwe', '11', '2', '11', '1', 'assets/dokumen/Testing0422.pdf', 'BIO.01/12/15.SSA', 2),
-(4, 'Test 123', '1', '1', '1', 'A', 'assets/dokumen/Dokumen_Test0406.pdf', 'QWE.12.12/21QW', 9);
+(1, 'Pohon', '2', '3', '1', '3', 'assets/dokumen/Kontrak_kerja0652.pdf', '03.K/91.04/P18-F3/PPK-F/DJE/2011', 13),
+(6, 'adsd', '1', '1', '1', 'A', 'assets/dokumen/Surat_Gas1656.pdf', 'BIOGAS12312/12/51', 11),
+(7, 'Roaster', '2', '2', '2', 'BB', 'assets/dokumen/tetetetete1628.pdf', 'QQQ.12/12/121', 12);
 
 -- --------------------------------------------------------
 
@@ -108,20 +109,16 @@ CREATE TABLE IF NOT EXISTS `tbl_maps` (
   `lokasi` varchar(60) NOT NULL,
   `lat` float(10,6) NOT NULL,
   `lng` float(10,6) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_maps`
 --
 
 INSERT INTO `tbl_maps` (`kd_map`, `lokasi`, `lat`, `lng`) VALUES
-(1, 'Kabupaten Sambas', 1.384143, 109.285645),
-(2, 'Kabupaten Mempawah', 0.362546, 108.978027),
-(3, 'Kabupaten Singkawang', 0.900842, 109.010986),
-(4, 'Kabupaten Pontianak', -0.032959, 109.362541),
-(5, 'Kabupaten Bengkayang', 0.780005, 109.488892),
-(6, 'Kabupaten Sanggau', 0.098877, 110.598511),
-(9, 'Test', -0.593251, 109.736076);
+(12, 'Kabupaten Sambas', 1.323735, 109.148315),
+(13, 'Kabupaten Tapanuli', 2.265340, 98.338196),
+(11, 'Kabupaten Penjaringan', -6.136459, 106.742081);
 
 -- --------------------------------------------------------
 
@@ -132,7 +129,7 @@ INSERT INTO `tbl_maps` (`kd_map`, `lokasi`, `lat`, `lng`) VALUES
 CREATE TABLE IF NOT EXISTS `tbl_pekerjaan` (
   `kd_pekerjaan` varchar(25) NOT NULL,
   `nm_pekerjaan` varchar(200) NOT NULL,
-  `unit` varchar(2) DEFAULT NULL,
+  `unit` int(11) DEFAULT NULL,
   `tahun` year(4) NOT NULL,
   `provinsi` varchar(50) DEFAULT NULL,
   `kabupaten` varchar(50) DEFAULT NULL,
@@ -148,8 +145,11 @@ CREATE TABLE IF NOT EXISTS `tbl_pekerjaan` (
 --
 
 INSERT INTO `tbl_pekerjaan` (`kd_pekerjaan`, `nm_pekerjaan`, `unit`, `tahun`, `provinsi`, `kabupaten`, `kecamatan`, `desa`, `status`, `keterangan`, `index_arsip`) VALUES
-('PKRJ-00004', 'Testing', '1', 2014, 'Jawa Tengah', 'testing', 'test', 'test', 'est', 'test', 'IDX-00001'),
-('PKRJ-00011', 'Implementasi Biogas Komunal untuk Rumah Tangga dan industri UKM (Limbah Industri Tahu)', '1', 2012, 'Jawa Tengah', 'Kulon Progo', 'Sentolo', 'Tuksono', 'Selesai', 'Tidak ada keterangan lebih lanjut', 'IDX-00001');
+('PKJ-061115~0001', 'Pengadaan & Pemasangan Peralatan Kegiatan Produktif', 2, 2011, 'Sumatera Utara', 'Tapanuli', 'Sd Hole', 'Hota Tonga Turunan', 'Batal', 'Tidak Ada.', 'IDX-051115~0001'),
+('PKJ-121115~0002', 'Testing Pekerjaan', 1, 2013, 'Kalimantan Barat', 'Singkawang', 'Singkawang Utara', 'Lirang', 'Belum diusulkan', 'Tidak ada', 'IDX-121115~0002'),
+('PKJ-131115~0003', 'Gulali', 1, 2015, 'Kalimantan Barat', 'sambas', 'pemangkat', 'penjajap', 'Batal', 'Tidak ada', 'IDX-121115~0002'),
+('PKJ-161115~0004', 'PLTU', 1, 2014, 'Kalimantan Timur', 'Tidak tahu', 'landak', 'kapir', 'tidak diketahui', 'tidak ada', 'IDX-051115~0001'),
+('PKJ-161115~0005', 'Test cari bro', 1, 2011, 'Kalimantan barat', 'sambas', 'semparuk', 'prapakan', 'Pending', 'Tidak ada', 'IDX-121115~0002');
 
 -- --------------------------------------------------------
 
@@ -168,15 +168,15 @@ CREATE TABLE IF NOT EXISTS `tbl_user` (
   `username` varchar(50) NOT NULL,
   `password` varchar(100) NOT NULL,
   `role` varchar(25) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_user`
 --
 
 INSERT INTO `tbl_user` (`id`, `nama`, `alamat`, `email`, `nohp`, `tpt_lahir`, `tgl_lahir`, `username`, `password`, `role`) VALUES
-(1, 'Administrator', '-', NULL, '-', '-', '0000-00-00', 'Admin', '202cb962ac59075b964b07152d234b70', 'Master'),
-(14, 'Toni Stevanus', 'Jalan Pangeran Tubagus Angke No. 192', 'Toni.99@gmail.com', '085245451890', 'Jakarta', '1990-12-31', 'Toni', 'dce6345ea5b90d6ea53f0ef5c4b4c72c', 'Admin');
+(1, 'Administrator', 'TBD', 'TBD', 'TBD', 'TBD', '0000-00-00', 'Admin', '21232f297a57a5a743894a0e4a801fc3', 'Master'),
+(2, 'Sugianto', 'Jalan Moh Hambal No. 99', 'sugi.92@gmail.com', '08525245997896', 'Pemangkat', '1992-01-11', 'Sugi123', 'd8578edf8458ce06fbc5bb76a58c5ca4', 'Admin');
 
 --
 -- Indexes for dumped tables
@@ -226,17 +226,17 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_lokasi`
 --
 ALTER TABLE `tbl_lokasi`
-  MODIFY `kd_lokasi` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `kd_lokasi` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `tbl_maps`
 --
 ALTER TABLE `tbl_maps`
-  MODIFY `kd_map` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `kd_map` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
