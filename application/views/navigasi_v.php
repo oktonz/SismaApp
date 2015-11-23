@@ -37,6 +37,13 @@
                                 <li><a href="<?php echo base_url().'informasi';?>">Informasi Data</a></li>
                             </ul>
                         </li>
+                        <li class="accordion">
+                            <a class="ajax-link" href="#"><i class="glyphicon glyphicon-question-sign"></i><span> Help</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">Manual</a></li>
+                                <!--<li><a href="<?php echo base_url().'informasi';?>">Informasi Data</a></li>-->
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
