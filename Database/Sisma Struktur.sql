@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2015 at 05:50 AM
+-- Generation Time: Nov 23, 2015 at 11:25 AM
 -- Server version: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -51,6 +51,7 @@ CREATE TABLE IF NOT EXISTS `tbl_dokumen` (
 CREATE TABLE IF NOT EXISTS `tbl_index` (
   `index_arsip` varchar(50) NOT NULL,
   `judul` varchar(100) NOT NULL,
+  `instansi` varchar(150) DEFAULT NULL,
   `tgl_input` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

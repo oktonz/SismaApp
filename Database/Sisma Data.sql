@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2015 at 05:49 AM
+-- Generation Time: Nov 23, 2015 at 11:25 AM
 -- Server version: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -47,9 +47,14 @@ CREATE TABLE IF NOT EXISTS `tbl_dokumen` (
 --
 
 INSERT INTO `tbl_dokumen` (`no_dok`, `nm_dok`, `asal`, `penerima`, `kategori`, `sifat`, `versi`, `tgl_dok`, `tgl_terima`, `kondisi`, `keterangan`, `kd_pekerjaan`, `kd_map`) VALUES
-('03.K/91.04/P18-F3/PPK-F/DJE/2011', 'Kontrak Kerja', 'Bupati', 'Direktorat EBK', 'Dokumen Kontrak', 'Penting', '1', '2015-11-01', '2015-11-02', 'baik', 'Belum ada usulan dari bupati setempat', 'PKJ-061115~0001', 13),
-('BIOGAS12312/12/51', 'Surat Gas', 'ajhgdakj', 'jhaskjdh', 'kjashkjd', 'kjhaskjdh', '1', '2014-12-31', '2015-12-31', 'asda', 'asjhdk', 'PKJ-121115~0002', 11),
-('QQQ.12/12/121', 'tetetetete', 'tetetetete', 'etettetete', 'etetet', 'etettete', '1', '2015-12-31', '2014-12-31', 'rwrwrwrw', 'rwrwrwrwr', 'PKJ-161115~0005', 12);
+('-', 'Laporan Kabid Pertamben Kab Pengandaran pada workshop Serah terima aset', '-', '-', 'Laporan', '-', '1', '2014-11-27', '2015-11-23', 'Rusak', 'Kondisi aset tidak ada penangkal petir intake, head race dan penstock tertimpa longsor.', 'PKJ-231115~0002', 2),
+('03/91.04/P07-F3/PPK-F/DJE/2011', 'Nomor Kontrak', '-', '-', 'Dokumen Kontrak', '-', '1', '2015-11-23', '2015-11-23', 'Baik', 'Tidak Ada.', 'PKJ-231115~0001', 1),
+('03/91.04/P10-F3/PPK-F/DJE/2011', 'Nomor Kontrak', '-', '-', 'Dokumen Kontrak', '-', '1', '2015-11-23', '2015-11-23', 'Rusak', 'Tidak ada', 'PKJ-231115~0002', 2),
+('03/91.04/S05-F2/PPKF/DJE/2011', 'Surat Kontrak', '-', '-', 'Dokumen kontrak', '-', '1', '2015-12-31', '2015-12-31', 'Baik', 'Tidak ada', 'PKJ-231115~0003', 5),
+('08/BA/91/SDE/2012:671/1626/BBMSDAESDM/2012', 'PJK Pemda', '-', '-', 'Berita Acara Sementara', '-', '1', '2012-06-21', '2015-11-23', 'Rusak', 'Tidak ada', 'PKJ-231115~0002', 2),
+('231/21.04/DEA.02/2014', 'Serah terima ke Bupati', '-', '-', 'Surat Permintaan', '-', '1', '2014-04-01', '2014-04-02', 'Baik', 'Tidak Ada.', 'PKJ-231115~0001', 1),
+('239/21.04/DEA.02/2014', 'Serah Terima ke Bupati', '-', '-', 'Surat Permintaan', '-', '1', '2014-04-01', '2015-11-23', 'Rusak', 'Tidak ada.', 'PKJ-231115~0002', 2),
+('540/721/IV/2011', 'Usulan dari Pemda', 'Gubernur Sulawesi Barat', '-', 'Surat', 'Penting', '1', '2011-04-08', '2015-11-01', 'Baik', 'Tidak ada.', 'PKJ-231115~0003', 5);
 
 -- --------------------------------------------------------
 
@@ -60,6 +65,7 @@ INSERT INTO `tbl_dokumen` (`no_dok`, `nm_dok`, `asal`, `penerima`, `kategori`, `
 CREATE TABLE IF NOT EXISTS `tbl_index` (
   `index_arsip` varchar(50) NOT NULL,
   `judul` varchar(100) NOT NULL,
+  `instansi` varchar(150) DEFAULT NULL,
   `tgl_input` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -67,9 +73,9 @@ CREATE TABLE IF NOT EXISTS `tbl_index` (
 -- Dumping data for table `tbl_index`
 --
 
-INSERT INTO `tbl_index` (`index_arsip`, `judul`, `tgl_input`) VALUES
-('IDX-051115~0001', 'Produktif', '2015-11-01'),
-('IDX-121115~0002', 'Test', '2015-11-03');
+INSERT INTO `tbl_index` (`index_arsip`, `judul`, `instansi`, `tgl_input`) VALUES
+('IDX-231115~0001', 'PLTMH', 'Direktorat Aneka EBT', '2015-11-20'),
+('IDX-231115~0002', '-', 'Direktorat Bioenergi', '2015-12-31');
 
 -- --------------------------------------------------------
 
@@ -87,16 +93,21 @@ CREATE TABLE IF NOT EXISTS `tbl_lokasi` (
   `file_path` varchar(150) DEFAULT NULL,
   `no_dok` varchar(100) NOT NULL,
   `kd_map` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_lokasi`
 --
 
 INSERT INTO `tbl_lokasi` (`kd_lokasi`, `gedung`, `lantai`, `rak`, `baris`, `kolom`, `file_path`, `no_dok`, `kd_map`) VALUES
-(1, 'Pohon', '2', '3', '1', '3', 'assets/dokumen/Kontrak_kerja0652.pdf', '03.K/91.04/P18-F3/PPK-F/DJE/2011', 13),
-(6, 'adsd', '1', '1', '1', 'A', 'assets/dokumen/Surat_Gas1656.pdf', 'BIOGAS12312/12/51', 11),
-(7, 'Roaster', '2', '2', '2', 'BB', 'assets/dokumen/tetetetete1628.pdf', 'QQQ.12/12/121', 12);
+(1, 'Testing', '2', '2', '2', '2', 'assets/dokumen/Serah_terima_ke_Bupati2323.pdf', '231/21.04/DEA.02/2014', 1),
+(2, 'Test', '2', '2', '2', '2', 'assets/dokumen/Nomor_Kontrak2327.pdf', '03/91.04/P07-F3/PPK-F/DJE/2011', 1),
+(3, 'Luar Biasa', '2', '1', '1', '1', 'assets/dokumen/Serah_Terima_ke_Bupati2333.pdf', '239/21.04/DEA.02/2014', 2),
+(4, 'Luar Biasa', '1', '1', '1', '1', 'assets/dokumen/Nomor_Kontrak2334.pdf', '03/91.04/P10-F3/PPK-F/DJE/2011', 2),
+(5, 'Renault', '1', '2', '3', '4', 'assets/dokumen/PJK_Pemda2337.pdf', '08/BA/91/SDE/2012:671/1626/BBMSDAESDM/2012', 2),
+(6, 'Luar Biasa', '1', '2', '3', '4', 'assets/dokumen/Laporan_Kabid_Pertamben_Kab_Pengandaran_pada_workshop_Serah_terima_aset2341.pdf', '-', 2),
+(7, 'Timuraya', '5', '1', '2', '4', 'assets/dokumen/Surat_Kontrak2335.pdf', '03/91.04/S05-F2/PPKF/DJE/2011', 5),
+(8, 'Timuraya', '2', '2', '2', '2', 'assets/dokumen/Usulan_dari_Pemda2337.pdf', '540/721/IV/2011', 5);
 
 -- --------------------------------------------------------
 
@@ -109,16 +120,17 @@ CREATE TABLE IF NOT EXISTS `tbl_maps` (
   `lokasi` varchar(60) NOT NULL,
   `lat` float(10,6) NOT NULL,
   `lng` float(10,6) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_maps`
 --
 
 INSERT INTO `tbl_maps` (`kd_map`, `lokasi`, `lat`, `lng`) VALUES
-(12, 'Kabupaten Sambas', 1.323735, 109.148315),
-(13, 'Kabupaten Tapanuli', 2.265340, 98.338196),
-(11, 'Kabupaten Penjaringan', -6.136459, 106.742081);
+(1, 'Kabupaten Samosir', 2.653622, 98.768250),
+(2, 'Kabupaten Ciamis', -7.324330, 108.324333),
+(3, 'Kabupaten Jayapura', -2.959499, 139.822144),
+(5, 'Kabupaten Mamuju Utara', -1.510445, 119.492371);
 
 -- --------------------------------------------------------
 
@@ -145,11 +157,9 @@ CREATE TABLE IF NOT EXISTS `tbl_pekerjaan` (
 --
 
 INSERT INTO `tbl_pekerjaan` (`kd_pekerjaan`, `nm_pekerjaan`, `unit`, `tahun`, `provinsi`, `kabupaten`, `kecamatan`, `desa`, `status`, `keterangan`, `index_arsip`) VALUES
-('PKJ-061115~0001', 'Pengadaan & Pemasangan Peralatan Kegiatan Produktif', 2, 2011, 'Sumatera Utara', 'Tapanuli', 'Sd Hole', 'Hota Tonga Turunan', 'Batal', 'Tidak Ada.', 'IDX-051115~0001'),
-('PKJ-121115~0002', 'Testing Pekerjaan', 1, 2013, 'Kalimantan Barat', 'Singkawang', 'Singkawang Utara', 'Lirang', 'Belum diusulkan', 'Tidak ada', 'IDX-121115~0002'),
-('PKJ-131115~0003', 'Gulali', 1, 2015, 'Kalimantan Barat', 'sambas', 'pemangkat', 'penjajap', 'Batal', 'Tidak ada', 'IDX-121115~0002'),
-('PKJ-161115~0004', 'PLTU', 1, 2014, 'Kalimantan Timur', 'Tidak tahu', 'landak', 'kapir', 'tidak diketahui', 'tidak ada', 'IDX-051115~0001'),
-('PKJ-161115~0005', 'Test cari bro', 1, 2011, 'Kalimantan barat', 'sambas', 'semparuk', 'prapakan', 'Pending', 'Tidak ada', 'IDX-121115~0002');
+('PKJ-231115~0001', 'PLTMH 31.20 kW', 1, 2011, 'Sumatera Utara', 'Samosir', '-', 'Hasinggahan', 'Belum diusulkan', 'Tidak ada Surat Pernyataan Pemda menerima Hibah, tidak ada BAST Sementara, tidak ada foto proyek.', 'IDX-231115~0001'),
+('PKJ-231115~0002', 'PLTMH 24.40 kW', 1, 2011, 'Jawa Barat', 'Ciamis', 'Cigugur', 'Harumandala', 'Kondisi Rusak', 'Tidak ada Surat pernyataan Pemda menerima hibah, Foto proyek tidak ada.', 'IDX-231115~0001'),
+('PKJ-231115~0003', 'Pembangunan DME berbasis BBN Singkong 400 L/Hari: 90%v/v', 1, 2011, 'Sulawesi Barat', 'Mamuju Utara', 'Pasang Kayu ', 'Karya Bersama', 'Belum diusulkan', 'Tidak ada Surat Pernyataan Pemda menerima hibah, foto proyek tidak ada.', 'IDX-231115~0002');
 
 -- --------------------------------------------------------
 
@@ -175,8 +185,7 @@ CREATE TABLE IF NOT EXISTS `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`id`, `nama`, `alamat`, `email`, `nohp`, `tpt_lahir`, `tgl_lahir`, `username`, `password`, `role`) VALUES
-(1, 'Administrator', 'TBD', 'TBD', 'TBD', 'TBD', '0000-00-00', 'Admin', '21232f297a57a5a743894a0e4a801fc3', 'Master'),
-(2, 'Sugianto', 'Jalan Moh Hambal No. 99', 'sugi.92@gmail.com', '08525245997896', 'Pemangkat', '1992-01-11', 'Sugi123', 'd8578edf8458ce06fbc5bb76a58c5ca4', 'Admin');
+(1, 'Administrator', 'TBD', 'TBD', 'TBD', 'TBD', '0000-00-00', 'Admin', '21232f297a57a5a743894a0e4a801fc3', 'Master');
 
 --
 -- Indexes for dumped tables
@@ -226,12 +235,12 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_lokasi`
 --
 ALTER TABLE `tbl_lokasi`
-  MODIFY `kd_lokasi` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `kd_lokasi` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `tbl_maps`
 --
 ALTER TABLE `tbl_maps`
-  MODIFY `kd_map` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
+  MODIFY `kd_map` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `tbl_user`
 --
