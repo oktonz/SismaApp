@@ -101,6 +101,7 @@
                                 <tr>
                                     <th id="tengah" width="10%">Index</th>
                                     <th id="tengah">Judul</th>
+                                    <th id="tengah">Instansi</th>
                                     <th id="tengah">Nama Pekerjaan</th>
                                     <th id="tengah">Unit</th>
                                     <th id="tengah">Tahun</th>
@@ -117,6 +118,7 @@
                                 <tr>
                                     <td id="tengah"><?php echo $arsips['index_arsip'];?></td>
                                     <td id="tengah"><?php echo $arsips['judul'];?></td>
+                                    <td id="tengah"><?php echo $arsips['instansi'];?></td>
                                     <td id="tengah"><?php echo $arsips['nm_pekerjaan'];?></td>
                                     <td id="tengah"><?php echo $arsips['unit'];?></td>
                                     <td id="tengah"><?php echo $arsips['tahun'];?></td>

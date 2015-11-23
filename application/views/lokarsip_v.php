@@ -103,7 +103,7 @@
                             <table class="table table-striped table-bordered bootstrap-datatable datatable responsive">
                                 <thead>
                                 <tr>
-                                    <th id="tengah">Nomor</th>
+                                    <th id="tengah">No</th>
                                     <th id="tengah">Lokasi</th>
                                     <th id="tengah">Gedung</th>
                                     <th id="tengah">Lantai</th>
@@ -113,7 +113,7 @@
                                     <th id="tengah">No Dokumen</th>
                                     <th id="tengah">Perihal</th>            
                                     <th id="tengah">Data File</th>
-                                    <th id="tengah" width="15%">Action</th>
+                                    <th id="tengah" width="7%">Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>

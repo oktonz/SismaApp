@@ -113,10 +113,8 @@
                                     <th>Kategori</th>
                                     <th>sifat</th>
                                     <th>Versi</th>
-                                    <th>Tanggal</th>
-                                    <th>Tanggal Terima</th>            
-                                    <th>Kondisi</th>
-                                    <th>Keterangan</th>
+                                    <th>Tanggal</th>                                               
+                                    <th>Kondisi</th>                            
                                     <th>Data File</th>
                                     <th>Action</th>
                                 </tr>
@@ -131,10 +129,8 @@
                                         <td class="center"><?php echo $has['kategori'];?></td>
                                         <td class="center"><?php echo $has['sifat'];?></td>
                                         <td class="center"><?php echo $has['versi'];?></td>
-                                        <td class="center"><?php echo $has['tgl_dok'];?></td>
-                                        <td class="center"><?php echo $has['tgl_terima'];?></td>
-                                        <td class="center"><?php echo $has['kondisi'];?></td>
-                                        <td class="center"><?php echo $has['keterangan'];?></td>
+                                        <td class="center"><?php echo $has['tgl_dok'];?></td>                                    
+                                        <td class="center"><?php echo $has['kondisi'];?></td>                                
                                         <td class="center">
                                             <a href="<?php echo base_url().$has['file_path'];?>" target="_blank">File</a>
                                         </td>

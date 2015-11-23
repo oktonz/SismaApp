@@ -117,6 +117,12 @@
                                   </div>
                                 </div>
                                 <div class="form-group">
+                                  <label class="control-label col-sm-2" for="instansi">Instansi:</label>
+                                  <div class="col-sm-8">          
+                                    <input type="text" class="form-control" placeholder="Instansi" name="txtinstansi" required>
+                                  </div>
+                                </div>
+                                <div class="form-group">
                                   <label class="control-label col-sm-2" for="tanggal">Tanggal Input:</label>
                                   <div class="col-sm-6">          
                                     <input type="date" class="form-control" name="dtpinput" required>

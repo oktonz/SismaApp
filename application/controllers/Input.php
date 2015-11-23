@@ -26,6 +26,7 @@ class Input extends CI_Controller {
 		$dat = array(
 			'index_arsip' => $this->input->post('txtidxarsip'),
 			'judul' => $this->input->post('txtjudularsip'),
+			'instansi' => $this->input->post('txtinstansi'),
 			'tgl_input' => $this->input->post('dtpinput'),
 		);
 		$this->input_model->add_index($dat);
