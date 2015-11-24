@@ -14,7 +14,12 @@ class Arsip extends CI_Controller {
 				'footer' => $this->html_footer(),
 				'arsip' => $result->result_array(),
 				);
-			$this->load->view('daftarsip_v', $komponen);
+			if ($session_data['role'] == 'Viewer') {
+				$this->load->view('daftarsip_v1', $komponen);
+			}
+			else {
+				$this->load->view('daftarsip_v', $komponen);
+			}
 		}
 		else
 		{
@@ -36,7 +41,12 @@ class Arsip extends CI_Controller {
 				'detarsip' => $arsipz->result_array(),
 				'dokumen' => $dok->result_array(),
 				);
-			$this->load->view('detarsip_v', $komponen);
+			if ($session_data['role'] == 'Viewer') {
+				$this->load->view('detarsip_v1', $komponen);
+			}
+			else {
+				$this->load->view('detarsip_v', $komponen);
+			}			
 		}
 		else
 		{
@@ -213,12 +223,17 @@ class Arsip extends CI_Controller {
 			'username' => $session_data['username'],
 			'role' => $session_data['role']
 		);
-		if ($session_data['role'] != 'Master') {
-			return $this->load->view('navigasi_v1', $data, true);
-		}
-		else
+		if ($session_data['role'] == 'Master' || $session_data['role'] == 'Super Admin') 
 		{
-			return $this->load->view('navigasi_v', $data, true);	
+			return $this->load->view('navigasi_v', $data, true);
+		}
+		elseif ($session_data['role'] == 'Admin')
+		{
+			return $this->load->view('navigasi_v1', $data, true);	
+		}
+		elseif ($session_data['role'] == 'Viewer')
+		{
+			return $this->load->view('navigasi_v2', $data, true);
 		}
 	}
 
