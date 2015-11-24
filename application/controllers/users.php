@@ -133,16 +133,9 @@ class Users extends CI_Controller {
 		if($this->session->userdata('logged_in'))
 		{
 			$result = $this->users_model->get_users($id)->row();
-			if(($result->username) != "Admin")
-			{
-				$this->delete_model->delete_user($id);
+			$this->delete_model->delete_user($id);
 
-				redirect('users');
-			}
-			else
-			{
-				redirect('users');
-			}
+			redirect('users');
 		}
 		else
 		{
@@ -174,6 +167,47 @@ class Users extends CI_Controller {
 		else
 		{
 			redirect('login');
+		}
+	}
+
+	public function change_pass()
+	{
+		if($this->session->userdata('logged_in'))
+		{	
+			$session_data = $this->session->userdata('logged_in');
+			$komponen = array(
+				'topbar' => $this->html_topbar(),
+				'navigasi' => $this->html_navigasi(),
+				'footer' => $this->html_footer(),
+				);
+			$this->load->view('ubahpass_v', $komponen);
+		}
+		else
+		{
+			redirect('login');
+		}
+	}
+
+	public function do_change_pass()
+	{
+		$session_data = $this->session->userdata('logged_in');
+		$oldpas = $this->input->post('txtoldpas');
+		$newpas1 = $this->input->post('txtnewpas1');
+		$newpas2 = $this->input->post('txtnewpas2');
+
+		$res = $this->login_model->password($oldpas);
+
+		if ($res) {
+			if ($newpas1 == $newpas2) {
+				$this->login_model->update_pass(MD5($newpas1), $session_data['username']);
+				redirect('home');
+			}
+			else {
+			redirect('users/change_pass');
+			}
+		}
+		else {
+			redirect('users/change_pass');
 		}
 	}
 
